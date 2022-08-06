@@ -30,39 +30,37 @@
     if (githubRateLimitExceeded == true) {
       githubRepos = [
         {
+          name: "Warden",
+          language: "React.js",
           repoUrl: "https://github.com/LukeHagar/Warden",
           description: "A Local/Web App for playing Plex Music on the Desktop",
-          name: "Warden",
           images: [],
         },
         {
+          name: "plex-api-oauth",
+          language: "JavaScript",
           repoUrl: "https://github.com/LukeHagar/plex-api-oauth",
           description:
             "An NPM Module designed to make Plex Media Server and plex.tv API calls easier to implement in JavaScript and React projects",
-          name: "plex-api-oauth",
           images: [
             "https://img.shields.io/npm/dw/plex-api-oauth",
             "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/plex-api-oauth",
           ],
         },
         {
+          name: "Anchor",
+          language: "React.js",
           repoUrl: "https://github.com/LukeHagar/Anchor",
           description: "My Website Repo",
-          name: "Anchor",
           images: [
             "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Anchor",
           ],
         },
         {
+          name: "LukeHagar.com",
+          language: "Svelte",
           repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
           description: "My Website Repo",
-          name: "LukeHagar.com",
-          images: [],
-        },
-        {
-          repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
-          description: "My Website Repo",
-          name: "LukeHagar.com",
           images: [],
         },
       ];
@@ -83,7 +81,8 @@
             <a class="underline text-blue-700 text-sm " href={repo.repoUrl}
               >{repo.name}
             </a>
-            <br />
+            <p class="text-xs">{repo.language}</p>
+
             <p class="text-black">{repo.description}</p>
             <a class="text-xs" href={repo.repoUrl}>{repo.repoUrl}</a>
 
