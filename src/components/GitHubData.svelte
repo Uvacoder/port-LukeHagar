@@ -51,7 +51,8 @@
           name: "Anchor",
           language: "React.js",
           repoUrl: "https://github.com/LukeHagar/Anchor",
-          description: "My Website Repo",
+          description:
+            "A Chrome Extension developed for customers to aid in use and support of IdentityNow",
           images: [
             "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Anchor",
           ],
@@ -81,7 +82,15 @@
             <a class="underline text-blue-700 text-sm " href={repo.repoUrl}
               >{repo.name}
             </a>
-            <p class="text-xs">{repo.language}</p>
+            {#if repo.language === "JavaScript"}
+              <p class="text-xs text-orange-400">{repo.language}</p>
+            {/if}
+            {#if repo.language === "React.js"}
+              <p class="text-xs text-[#3391ff]">{repo.language}</p>
+            {/if}
+            {#if repo.language === "Svelte"}
+              <p class="text-xs text-[#ff511a]">{repo.language}</p>
+            {/if}
 
             <p class="text-black">{repo.description}</p>
             <a class="text-xs" href={repo.repoUrl}>{repo.repoUrl}</a>
