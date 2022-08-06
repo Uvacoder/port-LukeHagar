@@ -73,39 +73,37 @@
 </script>
 
 <div class="px-2 py-2">
-  <div class="m-1">
-    <p class="text-xl text-white">GitHub Repos:</p>
-    {#if loading === false}
-      {#each githubRepos as repo}
-        <div class=" bg-gray-200 rounded-lg h-auto my-2 px-2 relative">
-          <div class="m-1">
-            <a class="underline text-blue-700 text-sm " href={repo.repoUrl}
-              >{repo.name}
-            </a>
-            {#if repo.language === "JavaScript"}
-              <p class="text-xs text-orange-400">{repo.language}</p>
-            {/if}
-            {#if repo.language === "React.js"}
-              <p class="text-xs text-[#3391ff]">{repo.language}</p>
-            {/if}
-            {#if repo.language === "Svelte"}
-              <p class="text-xs text-[#ff511a]">{repo.language}</p>
-            {/if}
+  <p class="text-xl ml-4 text-white">GitHub Repos:</p>
+  {#if loading === false}
+    {#each githubRepos as repo}
+      <div class=" bg-gray-200 rounded-lg h-auto my-2 px-2 relative">
+        <div class="m-1">
+          <a class="underline text-blue-700 text-lg" href={repo.repoUrl}
+            >{repo.name}
+          </a>
+          {#if repo.language === "JavaScript"}
+            <p class="text-md text-orange-400">{repo.language}</p>
+          {/if}
+          {#if repo.language === "React.js"}
+            <p class="text-md text-[#3391ff]">{repo.language}</p>
+          {/if}
+          {#if repo.language === "Svelte"}
+            <p class="text-md text-[#ff511a]">{repo.language}</p>
+          {/if}
 
-            <p class="text-black">{repo.description}</p>
-            <a class="text-xs" href={repo.repoUrl}>{repo.repoUrl}</a>
+          <p class="text-black">{repo.description}</p>
+          <a class="text-xs" href={repo.repoUrl}>{repo.repoUrl}</a>
 
-            {#each repo.images as imgSource}
-              <div class="py-1 px-1">
-                <img loading="lazy" alt="Repo Tags" src={imgSource} />
-              </div>
-            {/each}
-          </div>
+          {#each repo.images as imgSource}
+            <div class="py-1 px-1">
+              <img loading="lazy" alt="Repo Tags" src={imgSource} />
+            </div>
+          {/each}
         </div>
-      {/each}
-    {:else}
-      <!-- this block renders when githubRepos.length === 0 -->
-      <p>Loading...</p>
-    {/if}
-  </div>
+      </div>
+    {/each}
+  {:else}
+    <!-- this block renders when githubRepos.length === 0 -->
+    <p>Loading...</p>
+  {/if}
 </div>
