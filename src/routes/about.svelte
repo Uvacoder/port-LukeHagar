@@ -7,7 +7,7 @@
   <title>About</title>
 </svelte:head>
 
-<div class=" bg-slate-500 h-screen">
+<div class=" bg-slate-500 h-full">
   <NavBar currentPage="About" />
 
   <div class="px-2 py-2">
@@ -15,13 +15,8 @@
       <div class="px-3 py-3 ">
         <h1>About Me</h1>
       </div>
-      <div class="">
-        <p>
-          NavBar... CheckBoxes... Content... Styling... TODO... TODO... TODO...
-        </p>
-      </div>
     </div>
-    <div class="flex justify-center align-middle">
+    <div class="flex justify-center">
       <img
         alt="My Personal GitHub Stats"
         class="py-1 px-1 w-1/2"
