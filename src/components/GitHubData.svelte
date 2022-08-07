@@ -1,11 +1,18 @@
 <script>
+  import { each } from "svelte/internal";
+
   let githubRepos = [
     {
       name: "Warden",
       language: "React.js",
-      repoUrl: "https://github.com/LukeHagar/Warden",
+      sources: [
+        {
+          name: "GitHub",
+          repoUrl: "https://github.com/LukeHagar/Warden",
+        },
+      ],
       localPath: "/plex-api-oauth",
-      description: "A Local/Web App for playing Plex Music on the Desktop",
+      description: "A Electron/Web App for playing Plex Music on the Desktop",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Warden",
       ],
@@ -13,10 +20,18 @@
     {
       name: "plex-api-oauth",
       language: "JavaScript",
-      repoUrl: "https://github.com/LukeHagar/plex-api-oauth",
       localPath: "/plex-api-oauth",
-      description:
-        "An NPM Module designed to make Plex Media Server and plex.tv API calls easier to implement in JavaScript and React projects",
+      description: "An NPM Module for the Plex.TV API, now with OAuth",
+      sources: [
+        {
+          name: "GitHub",
+          repoUrl: "https://github.com/LukeHagar/plex-api-oauth",
+        },
+        {
+          name: "npmjs",
+          repoUrl: "https://www.npmjs.com/package/plex-api-oauth",
+        },
+      ],
       images: [
         "https://img.shields.io/npm/dw/plex-api-oauth",
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/plex-api-oauth",
@@ -25,10 +40,15 @@
     {
       name: "Anchor",
       language: "React.js",
-      repoUrl: "https://github.com/LukeHagar/Anchor",
+      sources: [
+        {
+          name: "GitHub",
+          repoUrl: "https://github.com/LukeHagar/Anchor",
+        },
+      ],
       localPath: "/plex-api-oauth",
       description:
-        "A Chrome Extension developed for customers to aid in use and support of IdentityNow",
+        "A Chrome Extension developed for SailPoint's IdentityNow SaaS Application",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Anchor",
       ],
@@ -36,9 +56,14 @@
     {
       name: "LukeHagar.com",
       language: "Svelte",
-      repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
+      sources: [
+        {
+          name: "GitHub",
+          repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
+        },
+      ],
       localPath: "/plex-api-oauth",
-      description: "The source code for this repo",
+      description: "The source code for this website",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/LukeHagar.com",
       ],
@@ -47,17 +72,15 @@
 </script>
 
 <div class="px-2 py-2">
-  <div class="flex gap-3 flex-wrap">
+  <div class="flex gap-2 flex-shrink flex-grow">
     {#each githubRepos as repo}
       <div
-        class=" bg-gray-200 rounded-xl h-auto my-2 px-2 hover:bg-gray-300 flex-grow"
+        class=" bg-gray-200 rounded-xl h-auto my-1 px-2 hover:bg-gray-300 flex-grow flex-shrink"
       >
         <div class="py-2">
           <div class="flex flex-row">
             <p>Project:</p>
-            <a class=" underline text-md px-2" href={repo.localPath}
-              >{repo.name}
-            </a>
+            <a class="text-md px-2" href={repo.localPath}>{repo.name} </a>
           </div>
           <div class="flex flex-row">
             <p class="pr-2">Language:</p>
@@ -74,10 +97,13 @@
             {/if}
           </div>
           <div class="flex flex-row">
-            <p class="pr-2">Source:</p>
-            <a class="text-md underline text-blue-600 px-2" href={repo.repoUrl}
-              >Github Repo</a
-            >
+            <p class="pr-2">Sources:</p>
+            {#each repo.sources as source}
+              <a
+                class="text-md underline text-blue-600 px-2"
+                href={source.repoUrl}>{source.name}</a
+              >
+            {/each}
           </div>
 
           <p class="text-black">{repo.description}</p>

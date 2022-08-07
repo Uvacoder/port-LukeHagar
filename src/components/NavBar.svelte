@@ -18,21 +18,9 @@
     </a>
     <a
       class=" hover:bg-gray-900 hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium"
-      href="/about"
-    >
-      About
-    </a>
-    <a
-      class=" hover:bg-gray-900 hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium"
       href="/projects"
     >
       Projects
-    </a>
-    <a
-      class=" hover:bg-gray-900 hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium"
-      href="/plex-api-oauth"
-    >
-      plex-api-oauth
     </a>
     <a
       class=" hover:bg-[#333] hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium "

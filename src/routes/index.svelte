@@ -11,20 +11,25 @@
   <NavBar currentPage="Introduction" />
 
   <div class="px-2 py-2">
-    <div class="h-auto bg-gray-400 rounded-xl flex justify-start px-3">
-      <div class="px-3 py-3 ">
+    <div class="h-auto bg-gray-200 rounded-xl flex justify-start px-3">
+      <div class="px-2 py-2 ">
         <h1 class="">Hi My Name is Luke Hagar</h1>
         <br />
-        <p class="">
-          I am currently a Cloud Support Engineer at SailPoint Technologies. I
-          greatly enjoy building thigs.
-
-          <br />
-          This website will be somewhere I can explore new technologies and showcase
-          my abilities with various tech stacks
-        </p>
+        <p class="">I am currently a Cloud Support Engineer at SailPoint.</p>
       </div>
     </div>
+  </div>
+  <div class="flex px-2 py-2">
+    <img
+      alt="My Personal GitHub Stats"
+      class="flex-grow hover:opacity-60"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lukehagar&theme=vue"
+    />
+    <img
+      alt="My Work GitHub Stats"
+      class="flex-grow hover:opacity-60"
+      src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=luke-hagar-sp&theme=vue"
+    />
   </div>
   <Footer />
 </div>
