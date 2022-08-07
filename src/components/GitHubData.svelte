@@ -5,7 +5,9 @@
       language: "React.js",
       repoUrl: "https://github.com/LukeHagar/Warden",
       description: "A Local/Web App for playing Plex Music on the Desktop",
-      images: [],
+      images: [
+        "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Warden",
+      ],
     },
     {
       name: "plex-api-oauth",
