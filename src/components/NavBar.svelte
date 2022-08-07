@@ -14,7 +14,7 @@
       class=" hover:bg-gray-900 hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium "
       href="/"
     >
-      Introduction
+      Home
     </a>
     <a
       class=" hover:bg-gray-900 hover:animate-pulse bg-gray-200  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium"
