@@ -30,6 +30,7 @@
 	"dependencies": {
 		"axios": "^0.27.2",
 		"prettier": "^2.7.1",
-		"prettier-plugin-svelte": "^2.7.0"
+		"prettier-plugin-svelte": "^2.7.0",
+		"svelte-inline-markdown-editor": "^0.1.0"
 	}
 }
