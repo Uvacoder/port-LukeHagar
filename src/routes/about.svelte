@@ -7,7 +7,7 @@
   <title>About</title>
 </svelte:head>
 
-<div class=" bg-slate-500 h-full">
+<div class=" bg-slate-500 w-full h-screen bg-cover bg-center">
   <NavBar currentPage="About" />
 
   <div class="px-2 py-2">
