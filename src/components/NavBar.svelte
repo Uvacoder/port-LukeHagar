@@ -23,6 +23,12 @@
       Projects
     </a>
     <a
+      class=" hover:bg-[#1C3879] hover:animate-pulse bg-[#EAE3D2]  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium"
+      href="/blog"
+    >
+      Blog
+    </a>
+    <a
       class=" hover:bg-[#333] hover:animate-pulse bg-[#EAE3D2]  hover:text-white text-black px-3 py-3 mx-3 my-3 rounded-md text-sm font-medium "
       href="https://www.github.com/lukehagar/"
     >

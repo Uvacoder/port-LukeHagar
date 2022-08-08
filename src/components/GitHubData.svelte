@@ -11,7 +11,7 @@
           repoUrl: "https://github.com/LukeHagar/Warden",
         },
       ],
-      localPath: "/wardeb",
+      localPath: "/warden",
       description: "A Electron/Web App for playing Plex Music on the Desktop",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Warden",
