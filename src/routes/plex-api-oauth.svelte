@@ -1,5 +1,5 @@
 <script>
-  import Footer from "../components/Footer.svelte";
+  import Body from "../components/Body.svelte";
   import NavBar from "../components/NavBar.svelte";
 </script>
 
@@ -7,9 +7,5 @@
   <title>plex-api-oauth</title>
 </svelte:head>
 
-<div class=" bg-slate-500 h-screen">
-  <NavBar currentPage="plex-api-oauth" />
-
-  <div class="px-2 py-2" />
-  <Footer />
-</div>
+<NavBar currentPage="plex-api-oauth" />
+<Body>More Content Coming Soon</Body>
