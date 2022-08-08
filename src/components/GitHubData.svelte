@@ -11,7 +11,7 @@
           repoUrl: "https://github.com/LukeHagar/Warden",
         },
       ],
-      localPath: "/plex-api-oauth",
+      localPath: "/wardeb",
       description: "A Electron/Web App for playing Plex Music on the Desktop",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Warden",
@@ -46,7 +46,7 @@
           repoUrl: "https://github.com/LukeHagar/Anchor",
         },
       ],
-      localPath: "/plex-api-oauth",
+      localPath: "/anchor",
       description:
         "A Chrome Extension developed for SailPoint's IdentityNow SaaS Application",
       images: [
@@ -62,7 +62,7 @@
           repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
         },
       ],
-      localPath: "/plex-api-oauth",
+      localPath: "/lukehagar.com",
       description: "The source code for this website",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/LukeHagar.com",
@@ -72,10 +72,10 @@
 </script>
 
 <div class="px-2 py-2">
-  <div class="grid grid-cols-3 gap-2">
+  <div class="grid grid-cols-2 gap-4">
     {#each githubRepos as repo}
       <div
-        class=" bg-gray-200 rounded-xl h-auto my-1 px-2 hover:bg-gray-300 flex-grow flex-shrink"
+        class=" bg-gray-300 rounded-xl h-auto my-1 px-2 hover:bg-gray-200 flex-grow flex-shrink hover:-translate-y-5 hover:shadow-xl hover:border-2"
       >
         <a href={repo.localPath}>
           <div class="py-2">
