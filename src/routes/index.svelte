@@ -2,7 +2,7 @@
   import NavBar from "../components/NavBar.svelte";
   import Body from "../components/Body.svelte";
   import sailpoint from "../assets/sailpoint.svg";
-  import headshot from "../assets/headshot.jpeg";
+  import headshot from "../../src/assets/headshot.jpeg";
 
   let experiences = [
     {
