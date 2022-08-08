@@ -2,7 +2,6 @@
   import NavBar from "../components/NavBar.svelte";
   import Body from "../components/Body.svelte";
   import sailpoint from "../assets/sailpoint.svg";
-  import headshot from "../../src/assets/headshot.jpeg";
 
   let experiences = [
     {
@@ -53,7 +52,11 @@
   <div class="px-2 py-2 ">
     <div class="grid grid-cols-6 rounded-lg bg-white py-2 px-2 my-2">
       <div class="px-2 py-2 flex justify-end">
-        <img src={headshot} alt="Me" class="rounded-full w-36 h-36" />
+        <img
+          src={"https://media-exp1.licdn.com/dms/image/C5603AQHP-ZFGPNDbBA/profile-displayphoto-shrink_800_800/0/1640206612663?e=1665619200&v=beta&t=Mhj3gWL9lfhBNk5oepXryDZ8gPpvZEkCK9VwQKHT2lM"}
+          alt="Me"
+          class="rounded-full w-36 h-36"
+        />
       </div>
       <div class=" col-span-4">
         <h1 class=" font-bold mt-4 pl-2">Hey I'm Luke</h1>
