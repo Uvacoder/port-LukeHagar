@@ -5,8 +5,6 @@ date: 08-07-2022
 layout: blog
 ---
 
-# {title}
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis velit vitae vehicula ultricies. In faucibus ac elit non iaculis. Pellentesque nec pulvinar turpis. Vivamus eu accumsan purus. Quisque a semper orci, eget finibus leo. Aenean nulla lacus, mattis at tempus nec, aliquet id urna. Integer elementum ante justo, bibendum mattis nunc lacinia vel. Donec ut eros non nisl sodales lacinia vel eu arcu. Cras a ante eget dui volutpat viverra. Integer porttitor lorem magna, vel laoreet ipsum egestas vitae. Integer odio nibh, bibendum vitae luctus sed, ornare sit amet nisi. Phasellus imperdiet risus non bibendum sodales.
 
 Duis sit amet erat commodo, rhoncus magna et, congue massa. Integer id lobortis ligula, ut tristique velit. Quisque id metus blandit, cursus orci vel, varius velit. Phasellus vitae elit ex. Suspendisse potenti. Curabitur dictum neque vel dapibus euismod. Sed viverra aliquet elit, in suscipit ipsum molestie a. Integer scelerisque felis nec diam mollis maximus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed fermentum nisl eu tortor consequat scelerisque. Suspendisse risus felis, lobortis aliquam mi ut, pharetra ultricies turpis. Vivamus egestas congue ipsum non varius. Duis in dictum arcu, quis ultrices urna. Sed fermentum velit id neque pellentesque scelerisque eget ut lacus.

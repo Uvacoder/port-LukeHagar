@@ -11,8 +11,8 @@
     {#each posts as post}
       <a href={post.path}>
         <div class="rounded-xl py-2 px-2 mx-2 my-2 bg-white">
-          <p>{post.title}</p>
-          <p>{post.date}</p>
+          <p class="text-xl">{post.title}</p>
+          <p class="text-xs">{post.date}</p>
         </div>
       </a>
     {/each}
