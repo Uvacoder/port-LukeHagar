@@ -1,14 +1,14 @@
 <script>
-  import NavBar from "../components/NavBar.svelte";
+  import title from "../stores/title";
   import GitHubData from "../components/GitHubData.svelte";
   import Body from "../components/Body.svelte";
+  title.set("Projects");
 </script>
 
 <svelte:head>
   <title>Projects</title>
 </svelte:head>
 
-<NavBar currentPage="Projects" />
 <Body>
   <GitHubData />
 </Body>

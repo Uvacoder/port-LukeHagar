@@ -1,9 +1,7 @@
 <script>
-  import Body from "../components/Body.svelte";
-  import NavBar from "../components/NavBar.svelte";
+  import title from "../stores/title";
+  title.set("Warden");
 </script>
-
-<NavBar currentPage="Warden" />
 
 <Body>
   <p>Content</p>
