@@ -29,6 +29,7 @@
 	"type": "module",
 	"dependencies": {
 		"axios": "^0.27.2",
+		"mdsvex": "^0.10.6",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0"
 	}

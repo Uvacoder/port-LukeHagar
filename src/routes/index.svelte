@@ -1,7 +1,7 @@
 <script>
   import NavBar from "../components/NavBar.svelte";
   import Body from "../components/Body.svelte";
-  import sailpoint from "../assets/sailpoint.svg";
+  import sailpoint from "../sailpoint.svg";
 
   let experiences = [
     {
