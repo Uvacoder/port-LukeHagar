@@ -165,21 +165,6 @@
               {/if}
             </div>
           </div>
-          <div class="px-4">
-            {#if experience.company === "Whole Foods"}
-              <img
-                class="w-32 h-32 bg-white rounded-full"
-                src={experience.logo}
-                alt={experience.company}
-              />
-            {:else}
-              <img
-                class="w-64 h-24"
-                src={experience.logo}
-                alt={experience.company}
-              />
-            {/if}
-          </div>
         </div>
       {/each}
     </div>

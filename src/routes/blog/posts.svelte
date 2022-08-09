@@ -1,7 +1,20 @@
 <script>
+  import Body from "../../components/Body.svelte";
+  import NavBar from "../../components/NavBar.svelte";
+
   export let posts;
 </script>
 
-{#each posts as post}
-  {post.title}
-{/each}
+<NavBar currentPage="Blog" />
+<Body>
+  <div class="grid grid-cols-4 gap-3">
+    {#each posts as post}
+      <a href={post.path}>
+        <div class="rounded-xl py-2 px-2 mx-2 my-2 bg-white">
+          <p>{post.title}</p>
+          <p>{post.date}</p>
+        </div>
+      </a>
+    {/each}
+  </div>
+</Body>

@@ -1,11 +1,11 @@
 ---
-title: Hello World Booyah
+title: Booyah
 author: Luke Hagar
 date: 08-07-2022
 layout: blog
 ---
 
-# Hello World
+# {title}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis velit vitae vehicula ultricies. In faucibus ac elit non iaculis. Pellentesque nec pulvinar turpis. Vivamus eu accumsan purus. Quisque a semper orci, eget finibus leo. Aenean nulla lacus, mattis at tempus nec, aliquet id urna. Integer elementum ante justo, bibendum mattis nunc lacinia vel. Donec ut eros non nisl sodales lacinia vel eu arcu. Cras a ante eget dui volutpat viverra. Integer porttitor lorem magna, vel laoreet ipsum egestas vitae. Integer odio nibh, bibendum vitae luctus sed, ornare sit amet nisi. Phasellus imperdiet risus non bibendum sodales.
 

@@ -1,5 +1,5 @@
 ---
-title: Hello World Foor bar Baz
+title: Foo Bar Baz
 author: Luke Hagar
 date: 08-05-2022
 layout: blog
