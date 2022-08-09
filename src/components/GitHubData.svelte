@@ -62,7 +62,7 @@
           repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
         },
       ],
-      localPath: "/lukehagar.com",
+      localPath: "https://github.com/LukeHagar/LukeHagar.com",
       description: "The source code for this website",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/LukeHagar.com",
@@ -73,9 +73,9 @@
 
 <div class="px-2 py-2">
   <div class="grid grid-cols-2 gap-4">
-    {#each githubRepos as repo}
+    {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
       <div
-        class=" bg-gray-300 rounded-xl h-auto my-1 px-2 hover:bg-gray-200 flex-grow flex-shrink hover:-translate-y-5 hover:shadow-xl hover:border-2"
+        class=" bg-gray-200 hover:bg-white rounded-xl h-auto my-1 px-2 flex-grow flex-shrink hover:-translate-y-5 hover:shadow-xl hover:border-2"
       >
         <a href={repo.localPath}>
           <div class="py-2">

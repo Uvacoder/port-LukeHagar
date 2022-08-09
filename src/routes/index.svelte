@@ -17,7 +17,7 @@
         "Svelte",
         "PowerShell",
       ],
-      startDate: "",
+      startDate: "Jan 2022",
       endDate: "",
       active: true,
     },
@@ -26,17 +26,17 @@
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
       skills: ["PowerShell", "AWS", "Active Directory"],
-      startDate: "",
-      endDate: "",
+      startDate: "May 2021",
+      endDate: "Feb 2022",
       active: false,
     },
     {
-      title: "Senior Technician",
+      title: "Senior Service Desk Technician",
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
       skills: ["PowerShell", "AWS", "Active Directory"],
-      startDate: "",
-      endDate: "",
+      startDate: "Sep 2019",
+      endDate: "May 2021",
       active: false,
     },
   ];
@@ -62,13 +62,14 @@
         <h1 class=" font-bold mt-4 pl-2">Hey I'm Luke</h1>
         <p class="py-2 px-2">
           I enjoy making things.
-
           <br />
-          This website for example. This is all written in Svelte, I wanted to get
-          familiar with it instead of React as it seems like a much more entertaining
-          and simpler language to use for personal projects. Now I have written Electron
-          Applications and Chrome extensions in React so its definitely doable but
-          I am not a huge fan of React, it feels so clunky compared to Svelte
+
+          This website for example. This is all written in Svelte, I wanted to
+          get familiar with it instead of React as it seems like a much more
+          entertaining and simpler language to use for personal projects. Now I
+          have written Electron Applications and Chrome extensions in React so
+          its definitely doable but I am not a huge fan of React, it feels so
+          clunky compared to Svelte
         </p>
       </div>
     </div>
@@ -168,5 +169,5 @@
         </div>
       {/each}
     </div>
-  </div></Body
->
+  </div>
+</Body>
