@@ -3,6 +3,4 @@
   title.set("Warden");
 </script>
 
-<Body>
-  <p>Content</p>
-</Body>
+<p>Content</p>
