@@ -49,7 +49,7 @@
 </svelte:head>
 
 <div class="px-2 py-2 ">
-  <div class="lg:grid lg:grid-cols-6 rounded-lg bg-white lg:py-2 lg:px-2">
+  <div class="lg:grid lg:grid-cols-6 rounded-lg bg-white py-2 lg:px-2">
     <div class="px-2 py-2 flex justify-center lg:justify-end">
       <img
         src={"https://media-exp1.licdn.com/dms/image/C5603AQHP-ZFGPNDbBA/profile-displayphoto-shrink_800_800/0/1640206612663?e=1665619200&v=beta&t=Mhj3gWL9lfhBNk5oepXryDZ8gPpvZEkCK9VwQKHT2lM"}
