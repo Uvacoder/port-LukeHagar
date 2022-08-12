@@ -49,8 +49,8 @@
 </svelte:head>
 
 <div class="px-2 py-2 ">
-  <div class="grid grid-cols-6 rounded-lg bg-white py-2 px-2">
-    <div class="px-2 py-2 flex justify-end">
+  <div class="lg:grid lg:grid-cols-6 rounded-lg bg-white lg:py-2 lg:px-2">
+    <div class="px-2 py-2 flex justify-center lg:justify-end">
       <img
         src={"https://media-exp1.licdn.com/dms/image/C5603AQHP-ZFGPNDbBA/profile-displayphoto-shrink_800_800/0/1640206612663?e=1665619200&v=beta&t=Mhj3gWL9lfhBNk5oepXryDZ8gPpvZEkCK9VwQKHT2lM"}
         alt="Me"
@@ -59,19 +59,10 @@
     </div>
     <div class=" col-span-4">
       <h1 class=" font-bold mt-4 pl-2">Hey I'm Luke</h1>
-      <p class="py-2 px-2">
-        I enjoy making things.
-
-        <br />
-        This website for example. This is all written in Svelte, I wanted to get
-        familiar with it instead of React as it seems like a much more entertaining
-        and simpler language to use for personal projects. Now I have written Electron
-        Applications and Chrome extensions in React so its definitely doable but
-        I am not a huge fan of React, it feels so clunky compared to Svelte
-      </p>
+      <p class="py-2 px-2">And I enjoy making things.</p>
     </div>
   </div>
-  <div class="flex justify-center gap-4 mt-8">
+  <div class="flex lg:justify-center gap-4 mt-8">
     <a href="https://www.github.com/lukehagar" class="py-2">
       My Personal GitHub:
       <img

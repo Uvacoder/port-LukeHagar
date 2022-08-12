@@ -6,9 +6,9 @@
   import title from "../stores/title";
 </script>
 
-<body class="flex flex-col bg-[#1C3879] min-h-screen ">
+<body class="flex flex-col bg-[#1C3879] min-h-screen">
   <NavBar currentPage={$title} />
-  <Body class="flex-auto">
+  <Body>
     <slot />
   </Body>
   <Footer />
