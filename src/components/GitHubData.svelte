@@ -78,7 +78,7 @@
           repoUrl: "https://github.com/LukeHagar/LukeHagar.com",
         },
       ],
-      localPath: "/lukehagar.com",
+      localPath: "/lukehagarcom",
       description: "The source code for this website",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/LukeHagar.com",
