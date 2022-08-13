@@ -10,34 +10,34 @@
       </p>
     </div>
     <div
-      class="flex justify-center py-2 px-2 lg:flex-row lg:justify-end flex-col"
+      class="flex justify-center py-2 px-2 lg:flex-row lg:justify-end flex-wrap"
     >
       <a
-        class=" hover:bg-[#1C3879] hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
+        class=" hover:bg-[#1C3879] hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
         href="/"
       >
         Home
       </a>
       <a
-        class=" hover:bg-[#1C3879] hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
+        class=" hover:bg-[#1C3879]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
         href="/projects"
       >
         Projects
       </a>
       <a
-        class=" hover:bg-[#1C3879] hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
+        class=" hover:bg-[#1C3879]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
         href="/blog/posts"
       >
         Blog
       </a>
       <a
-        class=" hover:bg-[#333] hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
+        class=" hover:bg-[#333]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
         href="https://www.github.com/lukehagar/"
       >
         Github
       </a>
       <a
-        class=" hover:bg-[#0072b1] hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
+        class=" hover:bg-[#0072b1]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
         href="https://www.linkedin.com/in/lukehagar/"
       >
         LinkedIn

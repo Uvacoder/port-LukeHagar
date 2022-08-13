@@ -1,11 +1,10 @@
 <script>
-  import Body from "../components/Body.svelte";
-  import NavBar from "../components/NavBar.svelte";
+  import title from "../stores/title";
+  title.set("plex-api-oauth");
 </script>
 
 <svelte:head>
   <title>plex-api-oauth</title>
 </svelte:head>
 
-<NavBar currentPage="plex-api-oauth" />
-<Body>More Content Coming Soon</Body>
+<p>More Content Coming Soon</p>

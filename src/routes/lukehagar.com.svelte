@@ -1,10 +1,10 @@
 <script>
-  import Body from "../components/Body.svelte";
-  import NavBar from "../components/NavBar.svelte";
+  import title from "../stores/title";
+  title.set("LukeHagar.com");
 </script>
 
-<NavBar currentPage="LukeHagar.com" />
+<svelte:head>
+  <title>LukeHagar.Com</title>
+</svelte:head>
 
-<Body>
-  <p>This Website was written in Svelte</p>
-</Body>
+<p>This website was written in Svelte</p>
