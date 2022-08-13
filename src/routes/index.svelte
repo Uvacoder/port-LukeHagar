@@ -16,7 +16,7 @@
         "Svelte",
         "PowerShell",
       ],
-      startDate: "",
+      startDate: "Jan 2022",
       endDate: "",
       active: true,
     },
@@ -25,8 +25,8 @@
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
       skills: ["PowerShell", "AWS", "Active Directory"],
-      startDate: "",
-      endDate: "",
+      startDate: "May 2021",
+      endDate: "Feb 2022",
       active: false,
     },
     {
@@ -34,8 +34,8 @@
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
       skills: ["PowerShell", "AWS", "Active Directory"],
-      startDate: "",
-      endDate: "",
+      startDate: "Sep 2019",
+      endDate: "May 2021",
       active: false,
     },
   ];
@@ -45,6 +45,7 @@
 <svelte:head>
   <title>{$title}</title>
 </svelte:head>
+
 
 <div class="px-2 py-2 ">
   <div
@@ -159,3 +160,4 @@
     </div>
   </div>
 </div>
+
