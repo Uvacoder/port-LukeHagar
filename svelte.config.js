@@ -1,6 +1,5 @@
 import adapter from "@sveltejs/adapter-auto";
 import preprocess from "svelte-preprocess";
-import mdSvexConfig from "./mdsvex.config.js";
 import { mdsvex } from "mdsvex";
 import { fileURLToPath } from "url";
 import * as path from "path";

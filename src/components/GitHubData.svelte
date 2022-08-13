@@ -54,6 +54,22 @@
       ],
     },
     {
+      name: "VA-Log-Parser",
+      language: "JavaScript",
+      sources: [
+        {
+          name: "GitHub",
+          repoUrl: "https://github.com/LukeHagar/VA-Log-Parser",
+        },
+      ],
+      localPath: "/VA-Log-Parser",
+      description:
+        "A Node CLI tool to automatically parse and organie Sailpoint VA logs",
+      images: [
+        "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Anchor",
+      ],
+    },
+    {
       name: "LukeHagar.com",
       language: "Svelte",
       sources: [
@@ -75,30 +91,25 @@
   <div class="grid grid-cols-2 gap-4">
     {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
       <div
-        class=" bg-gray-200 hover:bg-white rounded-xl h-auto my-1 px-2 flex-grow flex-shrink hover:-translate-y-5 hover:shadow-xl hover:border-2"
+        class=" bg-gray-300 rounded-xl my-1 px-2 hover:bg-gray-200  hover:-translate-y-5 hover:shadow-xl hover:border-2"
       >
         <a href={repo.localPath}>
           <div class="py-2">
-            <div class="flex flex-row">
-              <p>Project:</p>
-              <a class="text-md px-2" href={repo.localPath}>{repo.name} </a>
-            </div>
-            <div class="flex flex-row">
-              <p class="pr-2">Language:</p>
-              {#if repo.language === "JavaScript"}
-                <p class="text-md text-orange-400">
-                  {repo.language}
-                </p>
-              {/if}
-              {#if repo.language === "React.js"}
-                <p class="text-md text-[#3391ff]">{repo.language}</p>
-              {/if}
-              {#if repo.language === "Svelte"}
-                <p class="text-md text-[#ff511a]">{repo.language}</p>
-              {/if}
-            </div>
-            <div class="flex flex-row">
-              <p class="pr-2">Sources:</p>
+            <p class="text-md text-center">{repo.name}</p>
+            {#if repo.language === "JavaScript"}
+              <p class="text-md text-center text-orange-400">
+                {repo.language}
+              </p>
+            {/if}
+            {#if repo.language === "React.js"}
+              <p class="text-md text-center text-[#3391ff]">{repo.language}</p>
+            {/if}
+            {#if repo.language === "Svelte"}
+              <p class="text-md text-center text-[#ff511a]">{repo.language}</p>
+            {/if}
+
+            <p class="text-center">Sources:</p>
+            <div class="flex flex-row flex-wrap justify-center">
               {#each repo.sources as source}
                 <a
                   class="text-md underline text-blue-600 px-2"
@@ -107,9 +118,9 @@
               {/each}
             </div>
 
-            <p class="text-black">{repo.description}</p>
+            <p class="text-black text-center">{repo.description}</p>
 
-            <div class="flex flex-row">
+            <div class="flex flex-wrap justify-center">
               {#each repo.images as imgSource}
                 <div class="py-1 px-1">
                   <img alt="Repo Tags" src={imgSource} />
