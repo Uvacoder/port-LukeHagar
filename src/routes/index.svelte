@@ -1,5 +1,6 @@
 <script>
-  import { Avatar } from "@brainandbones/skeleton";
+  import { Avatar, Divider, Logo, LogoCloud } from "@brainandbones/skeleton";
+  import { Card } from "@brainandbones/skeleton";
   import sailpoint from "../sailpoint.svg";
   import title from "../stores/title";
 
@@ -9,8 +10,6 @@
       company: "SailPoint",
       logo: sailpoint,
       skills: [
-        "AWS",
-        "Azure",
         "Active Directory",
         "JavaScript",
         "React",
@@ -25,7 +24,7 @@
       title: "Identity and Access Management Engineer",
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
-      skills: ["PowerShell", "AWS", "Active Directory"],
+      skills: ["Identity Management", "SQL", "MIM"],
       startDate: "May 2021",
       endDate: "Feb 2022",
       active: false,
@@ -47,11 +46,9 @@
   <title>{$title}</title>
 </svelte:head>
 
-<div class="px-2 py-2 ">
-  <div
-    class="lg:grid lg:grid-cols-6 rounded-lg bg-white py-2 hover:shadow-2xl lg:px-2"
-  >
-    <div class="px-2 py-2 flex justify-center lg:justify-end">
+<div class="flex flex-wrap justify-center">
+  <div class="grid grid-cols-1 gap-1 justify-center">
+    <div class="flex flex-wrap justify-center">
       <Avatar
         initials="LH"
         src="https://media-exp1.licdn.com/dms/image/C5603AQHP-ZFGPNDbBA/profile-displayphoto-shrink_800_800/0/1640206612663?e=1665619200&v=beta&t=Mhj3gWL9lfhBNk5oepXryDZ8gPpvZEkCK9VwQKHT2lM"
@@ -60,106 +57,70 @@
         outlined={true}
         hover={true}
       />
+      <div class="flex flex-col items-center pt-12 pl-6 ">
+        <h1 class="font-bold text-center ">Hey I'm Luke</h1>
+        <p class="text-center ">And I enjoy making things.</p>
+      </div>
     </div>
-    <div class=" col-span-4">
-      <h1 class=" font-bold mt-4 pl-2">Hey I'm Luke</h1>
-      <p class="py-2 px-2">And I enjoy making things.</p>
+    <div class="flex flex-wrap justify-center pt-4">
+      <a href="https://www.github.com/lukehagar" class="content-center">
+        <img
+          alt="My Personal GitHub Stats"
+          href="https://www.github.com/lukehagar"
+          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lukehagar&theme=vue"
+        />
+      </a>
+      <a href="https://www.github.com/luke-hagar-sp" class="content-center">
+        <img
+          alt="My Work GitHub Stats"
+          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=luke-hagar-sp&theme=vue"
+        />
+      </a>
     </div>
   </div>
-  <div class="flex flex-wrap justify-center">
-    <a href="https://www.github.com/lukehagar" class="py-4">
-      <img
-        alt="My Personal GitHub Stats"
-        class=""
-        href="https://www.github.com/lukehagar"
-        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lukehagar&theme=vue"
-      />
-    </a>
-    <a href="https://www.github.com/luke-hagar-sp" class="py-2">
-      <img
-        alt="My Work GitHub Stats"
-        class=""
-        src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=luke-hagar-sp&theme=vue"
-      />
-    </a>
-  </div>
-  <div class="bg-[#EAE3D2] rounded-xl">
-    <p class="px-4 py-4 text-center">Previous Experience</p>
-    <div class=" px-2 flex flex-col">
-      {#each experiences as experience}
-        <div class="my-2 rounded-2xl bg-white hover:shadow-2xl grow">
-          <div class="px-4 py-4 flex flex-row justify-between">
-            <div>
-              <p class="text-black text-xs">{experience.title}</p>
-              <p class="text-black text-xs">{experience.company}</p>
+</div>
 
-              <div class="hidden lg:flex justify-between pt-2">
-                <p class="text-black">Skills:</p>
-                {#each experience.skills.sort() as skill}
-                  {#if skill === "Svelte"}
-                    <p
-                      class="text-white text-bold px-2 mx-1 rounded-md bg-[#ff511a]"
-                    >
-                      {skill}
-                    </p>
-                  {:else if skill === "React"}
-                    <p
-                      class="text-white text-bold px-2 mx-1 rounded-md bg-[#3391ff]"
-                    >
-                      {skill}
-                    </p>
-                  {:else if skill === "PowerShell"}
-                    <p
-                      class="text-white text-bold px-2 mx-1 rounded-md bg-[#012456]"
-                    >
-                      {skill}
-                    </p>
-                  {:else if skill === "JavaScript"}
-                    <p
-                      class="text-black text-bold px-2 mx-1 rounded-md bg-[#f7df1e]"
-                    >
-                      {skill}
-                    </p>
-                  {:else if skill === "AWS"}
-                    <p
-                      class="text-white text-bold px-2 mx-1 rounded-md bg-[#FF9900]"
-                    >
-                      {skill}
-                    </p>
-                  {:else if skill === "Azure"}
-                    <p
-                      class="text-white text-bold px-2 mx-1 rounded-md bg-[#008AD7]"
-                    >
-                      {skill}
-                    </p>
-                  {:else}
-                    <p
-                      class="text-black text-bold px-2 mx-1 rounded-md bg-[#F9F5EB]"
-                    >
-                      {skill}
-                    </p>
-                  {/if}
-                {/each}
-              </div>
-            </div>
-            <div class="">
-              {#if experience.company === "Whole Foods"}
-                <img
-                  class="w-12 h-12  rounded-full"
-                  src={experience.logo}
-                  alt={experience.company}
-                />
-              {:else}
-                <img
-                  class="w-32 h-12"
-                  src={experience.logo}
-                  alt={experience.company}
-                />
-              {/if}
-            </div>
+<div class="rounded-xl pt-8">
+  <p class="text-center">Previous Experience</p>
+  <Divider />
+  <div class="pt-4 px-2 flex flex-wrap gap-3">
+    {#each experiences as experience}
+      <Card
+        background="bg-white"
+        color="text-black"
+        class="shadow-2xl grow flex flex-col gap-2"
+      >
+        <div class=" flex flex-row justify-between">
+          <div>
+            <p class="text-black text-xl">{experience.title}</p>
+            <p class="text-black text-md">{experience.company}</p>
+          </div>
+          <div class="">
+            {#if experience.company === "Whole Foods"}
+              <img
+                class="w-12 h-12  rounded-full"
+                src={experience.logo}
+                alt={experience.company}
+              />
+            {:else}
+              <img
+                class="w-32 h-12"
+                src={experience.logo}
+                alt={experience.company}
+              />
+            {/if}
           </div>
         </div>
-      {/each}
-    </div>
+        <Divider />
+        <p>Description:</p>
+        <Divider />
+        <div class="flex flex-wrap gap-2">
+          <p>Skills:</p>
+          {#each experience.skills as skill}
+            <p>{skill}</p>
+          {/each}
+        </div>
+      </Card>
+    {/each}
   </div>
 </div>

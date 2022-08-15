@@ -1,5 +1,5 @@
 <script>
-  import { each } from "svelte/internal";
+  import { Card } from "@brainandbones/skeleton";
 
   let githubRepos = [
     {
@@ -87,49 +87,57 @@
   ];
 </script>
 
-<div class="px-2 py-2">
-  <div class="grid grid-cols-2 gap-4">
-    {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
-      <div
-        class=" bg-gray-300 rounded-xl my-1 px-2 hover:bg-gray-200  hover:-translate-y-5 hover:shadow-xl hover:border-2"
-      >
-        <a href={repo.localPath}>
-          <div class="py-2">
-            <p class="text-md text-center">{repo.name}</p>
+<div class="flex flex-wrap gap-4">
+  {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
+    <Card
+      background="bg-white"
+      color="text-black"
+      class="my-1 px-2 shadow-xl grow"
+    >
+      <a href={repo.localPath}>
+        <div class="py-2">
+          <div class="flex flex-row justify-center">
+            <p class="text-xl text-center">{repo.name}</p>
+            <p class="text-xl text-center px-2">-</p>
             {#if repo.language === "JavaScript"}
-              <p class="text-md text-center text-orange-400">
+              <p class="text-xl text-center text-[#f7df1e]">
                 {repo.language}
               </p>
             {/if}
             {#if repo.language === "React.js"}
-              <p class="text-md text-center text-[#3391ff]">{repo.language}</p>
+              <p class="text-xl text-center text-[#3391ff]">
+                {repo.language}
+              </p>
             {/if}
             {#if repo.language === "Svelte"}
-              <p class="text-md text-center text-[#ff511a]">{repo.language}</p>
+              <p class="text-xl text-center text-[#ff511a]">
+                {repo.language}
+              </p>
             {/if}
-
-            <p class="text-center">Sources:</p>
+          </div>
+          <div class="flex flex-row justify-center">
+            <p class="text-sm text-center">Sources:</p>
             <div class="flex flex-row flex-wrap justify-center">
               {#each repo.sources as source}
                 <a
-                  class="text-md underline text-blue-600 px-2"
+                  class="text-sm underline text-blue-600 px-2"
                   href={source.repoUrl}>{source.name}</a
                 >
               {/each}
             </div>
-
-            <p class="text-black text-center">{repo.description}</p>
-
-            <div class="flex flex-wrap justify-center">
-              {#each repo.images as imgSource}
-                <div class="py-1 px-1">
-                  <img alt="Repo Tags" src={imgSource} />
-                </div>
-              {/each}
-            </div>
           </div>
-        </a>
-      </div>
-    {/each}
-  </div>
+
+          <p class="text-black text-center">{repo.description}</p>
+
+          <div class="flex flex-wrap justify-center">
+            {#each repo.images as imgSource}
+              <div class="py-1 px-1">
+                <img alt="Repo Tags" src={imgSource} />
+              </div>
+            {/each}
+          </div>
+        </div>
+      </a>
+    </Card>
+  {/each}
 </div>

@@ -17,6 +17,7 @@
 		"@rgossiaux/svelte-heroicons": "^0.1.2",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "next",
+		"@tailwindcss/typography": "^0.5.4",
 		"autoprefixer": "^10.4.8",
 		"postcss": "^8.4.14",
 		"svelte": "^3.44.0",

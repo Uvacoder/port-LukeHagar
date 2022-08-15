@@ -1,30 +1,45 @@
 <script>
-  import Body from "../../components/Body.svelte";
+  import { Card } from "@brainandbones/skeleton";
   import currentPage from "../../stores/title";
   export let title;
   export let author;
   export let date;
-  currentPage.set(title);
-  console.log($currentPage);
+  export let tags;
+  currentPage.set("Blog Post");
 </script>
 
-<Body>
-  <div class="py-2">
-    <div class="grid grid-cols-2 flex-row bg-white px-2 py-2 rounded-xl my-2">
-      <div class="flex flex-col justify-start px-2">
-        <p class="text-xl">{title}</p>
-        {#if author}
-          <p class="text-xs">By: {author}</p>
-        {/if}
-      </div>
-      <div class="flex justify-end">
-        {#if date}
-          <p class="text-xl py-2 px-2">On: {date}</p>
-        {/if}
-      </div>
+<Card background="bg-accent-500" color="text-white">
+  <div class="grid grid-cols-2 flex-row rounded-xl my-2">
+    <div class="flex flex-col justify-start px-2 gap-1">
+      <p class="text-xl">{title}</p>
+      {#if author}
+        <p class="text-xs">By: {author}</p>
+      {/if}
     </div>
-    <div class="px-2">
-      <slot />
+    <div class="flex justify-end">
+      {#if date}
+        <p class="text-xl py-2 px-2">On: {date}</p>
+      {/if}
+    </div>
+    <div class="col-span-2">
+      {#if tags.length > 0}
+        <div class="flex flex-wrap gap-1 pl-2 pt-4">
+          <p class="text-xs">Tags:</p>
+          {#each tags as tag}
+            <a
+              class="underline text-xs"
+              href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}>{tag}</a
+            >
+          {/each}
+        </div>
+      {/if}
     </div>
   </div>
-</Body>
+</Card>
+<Card background="bg-accent-500" color="text-white" class="mt-2">
+  <div
+    class="prose dark:prose-invert prose-img:rounded-xl lg:prose-xl xl:prose-2xl prose-headings:underline flex flex-col justify-center max-w-none"
+  >
+    <slot />
+  </div>
+</Card>

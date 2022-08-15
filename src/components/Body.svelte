@@ -1,5 +1,11 @@
-<main class="px-2 py-2">
-  <div class="bg-[#EAE3D2] rounded-xl px-3">
-    <slot />
-  </div>
-</main>
+<script>
+  import { Card } from "@brainandbones/skeleton";
+</script>
+
+<Card
+  background="dark:bg-primary-500 bg-white"
+  color="text-white"
+  class="shadow-2xl grow m-2"
+>
+  <slot />
+</Card>

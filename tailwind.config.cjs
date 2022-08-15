@@ -5,5 +5,8 @@ module.exports = {
     "./node_modules/@brainandbones/skeleton/**/*.{html,js,svelte,ts}",
   ],
   theme: {},
-  plugins: [require("@brainandbones/skeleton/tailwind.cjs")],
+  plugins: [
+    require("@brainandbones/skeleton/tailwind.cjs"),
+    require("@tailwindcss/typography"),
+  ],
 };
