@@ -1,47 +1,97 @@
 <script>
   export let currentPage;
+  import { Card } from "@brainandbones/skeleton";
+  import { Button } from "@brainandbones/skeleton";
+  import { GradientHeading } from "@brainandbones/skeleton";
 </script>
 
-<header class="px-2 mt-2">
-  <div class="bg-[#EAE3D2] rounded-xl lg:grid lg:grid-cols-2">
-    <div class="flex justify-center lg:justify-start py-4 px-4">
-      <p class=" bg-[#EAE3D2] text-grey-900 text-xl font-medium">
-        {currentPage}
-      </p>
+<div class="p-2">
+  <Card background="bg-surface-800" color="text-white">
+    <div class=" rounded-xl lg:grid lg:grid-cols-2">
+      <div class="flex justify-center gap-8 lg:justify-start py-4 px-4">
+        <GradientHeading
+          tag="h1"
+          class="text-3xl"
+          direction="bg-gradient-to-r"
+          from="from-primary-500"
+          to="to-accent-500">Luke Hagar</GradientHeading
+        >
+      </div>
+      <div
+        class="flex justify-center py-2 px-2 gap-2 lg:flex-row lg:justify-end flex-col"
+      >
+        <Button
+          size="base"
+          background="bg-accent-700"
+          color="text-white"
+          ring="ring-accent-500"
+          weight="ring-none"
+          rounded="rounded-lg"
+          width="w-auto"
+          disabled={currentPage === "Home"}
+          class="hover:animate-pulse"
+          href="/"
+        >
+          Home
+        </Button>
+        <Button
+          size="base"
+          background="bg-accent-700"
+          color="text-white"
+          ring="ring-accent-500"
+          weight="ring-none"
+          rounded="rounded-lg"
+          width="w-auto"
+          disabled={currentPage === "Projects"}
+          class="hover:animate-pulse"
+          href="/projects"
+        >
+          Projects
+        </Button>
+        <Button
+          size="base"
+          background="bg-accent-700"
+          color="text-white"
+          ring="ring-accent-500"
+          weight="ring-none"
+          rounded="rounded-lg"
+          width="w-auto"
+          disabled={currentPage === "Blog"}
+          class="hover:animate-pulse"
+          href="/blog/posts"
+        >
+          Blog
+        </Button>
+
+        <Button
+          size="base"
+          background="hover:bg-[#333] bg-accent-700"
+          color="text-white"
+          ring="ring-accent-500"
+          weight="ring-none"
+          rounded="rounded-lg"
+          width="w-auto"
+          disabled={false}
+          class="hover:animate-pulse"
+          href="https://www.github.com/lukehagar/"
+        >
+          GitHub
+        </Button>
+        <Button
+          size="base"
+          background="hover:bg-[#0072b1] bg-accent-700"
+          color="text-white"
+          ring="ring-accent-500"
+          weight="ring-none"
+          rounded="rounded-lg"
+          width="w-auto"
+          disabled={false}
+          class="hover:animate-pulse"
+          href="https://www.linkedin.com/in/lukehagar/"
+        >
+          LinkedIn
+        </Button>
+      </div>
     </div>
-    <div
-      class="flex justify-center py-2 px-2 lg:flex-row lg:justify-end flex-wrap"
-    >
-      <a
-        class=" hover:bg-[#1C3879] hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
-        href="/"
-      >
-        Home
-      </a>
-      <a
-        class=" hover:bg-[#1C3879]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
-        href="/projects"
-      >
-        Projects
-      </a>
-      <a
-        class=" hover:bg-[#1C3879]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium"
-        href="/blog/posts"
-      >
-        Blog
-      </a>
-      <a
-        class=" hover:bg-[#333]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
-        href="https://www.github.com/lukehagar/"
-      >
-        Github
-      </a>
-      <a
-        class=" hover:bg-[#0072b1]  hover:shadow-2xl hover:animate-pulse py-2 px-2 lg:px-4 lg:py-4 text-center lg:text-left hover:text-white text-black rounded-md text-sm font-medium "
-        href="https://www.linkedin.com/in/lukehagar/"
-      >
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</header>
+  </Card>
+</div>
