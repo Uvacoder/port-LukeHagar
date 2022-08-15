@@ -5,17 +5,28 @@
 </script>
 
 <Card background="bg-accent-500" color="text-white" class="shadow-xl grow">
-  <a href={post.path} class="grow ">
-    <div class="grid grid-cols-2 flex-row bg-accent-500 px-2 py-2 rounded-xl">
-      <div class="flex flex-col justify-start px-2">
+  <a href={post.path}>
+    <div class="grid grid-cols-2 flex-row bg-accent-500 py-2 rounded-xl">
+      <div class="flex flex-col justify-start ">
         <p class="text-md">{post.title}</p>
         {#if post.author}
           <p class="text-xs">By: {post.author}</p>
         {/if}
+        {#if post.tags}
+          <div class=" flex flex-wrap pt-2 gap-3">
+            <p class="text-lg">Tags:</p>
+            {#each post.tags as tag}
+              <a
+                class="underline text-lg"
+                href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}>{tag}</a
+              >
+            {/each}
+          </div>
+        {/if}
       </div>
       <div class="flex justify-end">
         {#if post.date}
-          <p class="text-md py-2 px-2">On: {post.date}</p>
+          <p class="text-md py-2">On: {post.date}</p>
         {/if}
       </div>
     </div>

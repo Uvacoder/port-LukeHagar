@@ -1,10 +1,15 @@
 <script>
-  import Body from "../../components/Body.svelte";
   import title from "../../stores/title";
   import Post from "../../components/Post.svelte";
   import { Divider } from "@brainandbones/skeleton";
   title.set("Blog");
   export let posts;
+  let tags = [];
+  for (const post of posts) {
+    tags.push(...post.tags);
+  }
+  tags = Array.from(new Set([...tags]));
+  console.log(tags);
 </script>
 
 <svelte:head>
@@ -16,5 +21,15 @@
 <div class="flex flex-wrap justify-center gap-2">
   {#each posts as post}
     <Post {post} />
+  {/each}
+</div>
+<h1 class=" pt-8 pb-2 text-center">Tags:</h1>
+<Divider class="py-2" />
+<div class="flex flex-wrap justify-center gap-2">
+  {#each tags as tag}
+    <a
+      class="underline text-xl"
+      href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}>{tag}</a
+    >
   {/each}
 </div>
