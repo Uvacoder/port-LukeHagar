@@ -5,8 +5,12 @@
   export let author;
   export let date;
   export let tags;
-  currentPage.set("Blog Post");
+  currentPage.set(title);
 </script>
+
+<svelte:head>
+  <title>{$currentPage}</title>
+</svelte:head>
 
 <Card background="bg-accent-500" color="text-white">
   <div class="grid grid-cols-2 flex-row rounded-xl my-2">
