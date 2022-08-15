@@ -1,6 +1,6 @@
 <script>
   import title from "../stores/title";
-  title.set("Anchor");
+  title.set("VA-Log-Parser");
 </script>
 
 <svelte:head>

@@ -62,7 +62,7 @@
           repoUrl: "https://github.com/LukeHagar/VA-Log-Parser",
         },
       ],
-      localPath: "/VA-Log-Parser",
+      localPath: "/va-log-parser",
       description:
         "A Node CLI tool to automatically parse and organie Sailpoint VA logs",
       images: [

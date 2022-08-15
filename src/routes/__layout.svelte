@@ -1,6 +1,7 @@
 <script>
   import "../theme.css";
   import "../app.css";
+  import "highlight.js/styles/github-dark.css";
   import { Dialog } from "@brainandbones/skeleton";
   import Body from "../components/Body.svelte";
   import Footer from "../components/Footer.svelte";
