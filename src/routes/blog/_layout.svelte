@@ -1,6 +1,8 @@
 <script>
   import { Card } from "@brainandbones/skeleton";
   import currentPage from "../../stores/title";
+  export let data;
+  console.log(data);
   export let title;
   export let author;
   export let date;
@@ -12,7 +14,7 @@
   <title>{$currentPage}</title>
 </svelte:head>
 
-<Card background="bg-accent-500" color="text-white">
+<Card background="bg-white" color="text-black">
   <div class="grid grid-cols-2 flex-row rounded-xl my-2">
     <div class="flex flex-col justify-start px-2 gap-1">
       <p class="text-xl">{title}</p>
@@ -40,9 +42,9 @@
     </div>
   </div>
 </Card>
-<Card background="bg-accent-500" color="text-white" class="mt-2">
+<Card background="bg-white" color="text-black" class="mt-2">
   <div
-    class="prose dark:prose-invert prose-img:rounded-xl lg:prose-xl xl:prose-2xl prose-headings:underline flex flex-col justify-center max-w-none"
+    class="prose prose-img:rounded-xl lg:prose-xl xl:prose-2xl prose-headings:underline flex flex-col justify-center max-w-none"
   >
     <slot />
   </div>

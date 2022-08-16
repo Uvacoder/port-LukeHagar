@@ -1,15 +1,15 @@
 <script>
-  import title from "../../stores/title";
-  import Post from "../../components/Post.svelte";
+  export let data;
+  import title from "../../../stores/title";
+  import Post from "../../../components/Post.svelte";
   import { Divider } from "@brainandbones/skeleton";
   title.set("Blog");
-  export let posts;
+  let { posts } = data;
   let tags = [];
   for (const post of posts) {
     tags.push(...post.tags);
   }
   tags = Array.from(new Set([...tags]));
-  console.log(tags);
 </script>
 
 <svelte:head>

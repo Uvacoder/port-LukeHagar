@@ -1,12 +1,11 @@
 <script>
   import { Card } from "@brainandbones/skeleton";
-
   export let post;
 </script>
 
-<Card background="bg-accent-500" color="text-white" class="shadow-xl grow">
+<Card background="bg-white" color="text-black" class="shadow-xl grow">
   <a href={post.path}>
-    <div class="grid grid-cols-2 flex-row bg-accent-500 py-2 rounded-xl">
+    <div class="grid grid-cols-2 flex-row py-2 rounded-xl">
       <div class="flex flex-col justify-start ">
         <p class="text-md">{post.title}</p>
         {#if post.author}

@@ -14,8 +14,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis velit vit
 
 ```JavaScript
 <script>
-  import Body from "../../components/Body.svelte";
-  import NavBar from "../../components/NavBar.svelte";
+  throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+
+  import Body from "../../../components/Body.svelte";
+  import NavBar from "../../../components/NavBar.svelte";
 
   export let posts;
 </script>

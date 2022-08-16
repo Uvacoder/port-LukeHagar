@@ -1,6 +1,6 @@
 <script>
   import { CodeBlock } from "@brainandbones/skeleton";
-  import title from "../stores/title";
+  import title from "../../stores/title";
   title.set("Warden");
 </script>
 
