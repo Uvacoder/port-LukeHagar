@@ -60,7 +60,7 @@
     <Divider />
     <div class="xl:grid xl:grid-cols-2 gap-2 flex flex-col">
       <div class="flex justify-center">
-        <div class="grid grid-cols-1 content-center justify-center">
+        <div class="grid grid-cols-1 content-center justify-center gap-1">
           <Button
             size="xl:xl sm"
             background="bg-black"
@@ -70,12 +70,18 @@
             rounded="rounded-full"
             disabled={false}
             on:click={() => {
-              plexClientInformation = CreatePlexClientInformation();
+              plexClientInformation =
+                CreatePlexClientInformation("LukeHagar.com");
               console.log(plexClientInformation);
             }}
           >
             CreatePlexClientInformation()
           </Button>
+          <CodeBlock
+            class="text-start"
+            language="JSON"
+            code={`CreatePlexClientInformation({product: "LukeHagar.com"})`}
+          />
         </div>
       </div>
       <div class="overflow-hidden flex flex-col justify-center">

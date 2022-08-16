@@ -17,7 +17,7 @@ const config = {
     }),
     mdsvex({
       extensions: [".svx", ".md"],
-      martypants: { dashes: "oldschool" },
+      smartypants: { dashes: "oldschool" },
       layout: { blog: path.join(dirname, "./src/routes/blog/_layout.svelte") },
     }),
   ],
