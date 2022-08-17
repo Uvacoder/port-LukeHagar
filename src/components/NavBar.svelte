@@ -72,6 +72,7 @@
           disabled={false}
           class="hover:animate-pulse"
           href="https://www.github.com/lukehagar/"
+          target="_blank"
         >
           GitHub
         </Button>
@@ -86,6 +87,7 @@
           disabled={false}
           class="hover:animate-pulse"
           href="https://www.linkedin.com/in/lukehagar/"
+          target="_blank"
         >
           LinkedIn
         </Button>
