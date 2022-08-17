@@ -271,7 +271,7 @@ plexLoginInformation
                     ring="ring-transparent"
                     weight="ring-none"
                     rounded="rounded-full"
-                    disabled={plexServers === null}
+                    disabled={plexLoginInformation === null}
                     on:click={async () => {
                       commandOutPut = await GetPlexUserData(
                         plexClientInformation,
