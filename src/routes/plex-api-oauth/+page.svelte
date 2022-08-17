@@ -1,22 +1,24 @@
 <script>
   import {
+    AccordionGroup,
+    AccordionItem,
     Button,
     CodeBlock,
     Divider,
-    TabGroup,
     Tab,
+    TabGroup,
   } from "@brainandbones/skeleton";
-  import { AccordionGroup, AccordionItem } from "@brainandbones/skeleton";
 
   import {
-    PlexLogin,
     CreatePlexClientInformation,
-    GetPlexServers,
     GetPlexDevices,
     GetPlexLibraries,
-    GetPlexUserData,
     GetPlexMovieLibraries,
+    GetPlexServers,
+    GetPlexUserData,
+    PlexLogin,
   } from "plex-api-oauth";
+
   import { writable } from "svelte/store";
   import title from "../../stores/title";
   title.set("plex-api-oauth");

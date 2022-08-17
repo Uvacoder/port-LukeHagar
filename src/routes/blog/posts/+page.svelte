@@ -1,8 +1,8 @@
 <script>
   export let data;
-  import title from "../../../stores/title";
-  import Post from "../../../components/Post.svelte";
   import { Divider } from "@brainandbones/skeleton";
+  import Post from "../../../components/Post.svelte";
+  import title from "../../../stores/title";
   title.set("Blog");
   let { posts } = data;
   let tags = [];

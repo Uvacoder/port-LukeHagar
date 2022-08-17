@@ -1,8 +1,6 @@
 <script>
   export let currentPage;
-  import { Card } from "@brainandbones/skeleton";
-  import { Button } from "@brainandbones/skeleton";
-  import { GradientHeading } from "@brainandbones/skeleton";
+  import { Button, Card, GradientHeading } from "@brainandbones/skeleton";
 </script>
 
 <div class="px-2 pt-1">
