@@ -22,6 +22,7 @@
     console.log(analyticsId);
   }
   console.log(analyticsId);
+  console.log(import.meta.env.VERCEL_ANALYTICS_ID);
   console.log(browser);
   console.log(page);
   console.log(data);
