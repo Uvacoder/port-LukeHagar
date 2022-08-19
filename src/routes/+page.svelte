@@ -8,6 +8,7 @@
       title: "Cloud Support Engineer",
       company: "SailPoint",
       logo: sailpoint,
+      description: "",
       skills: [
         "Active Directory",
         "JavaScript",
@@ -23,6 +24,8 @@
       title: "Identity and Access Management Engineer",
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
+      description:
+        "Designed, implemented, and maintained credential and identity management solutions. Patched, Remediated 1000+ Vulnerabilities on, and Validated hundreds of Virtualized Hosts. Secured and audited all aspects of Users Identity and privileged access across multiple domains and systems",
       skills: ["Identity Management", "SQL", "MIM"],
       startDate: "May 2021",
       endDate: "Feb 2022",
@@ -32,6 +35,8 @@
       title: "Senior Service Desk Technician",
       company: "Whole Foods",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Whole_Foods_Market_201x_logo.svg",
+      description:
+        "Authored or contributed to over 300 knowledge articles, wrote and refined over 200,000 lines of PowerShell, processed more than 15,000 tickets, and oversaw a team of 20+ Technicians",
       skills: ["PowerShell", "AWS", "Active Directory"],
       startDate: "Sep 2019",
       endDate: "May 2021",
@@ -63,27 +68,43 @@
       </div>
     </div>
     <div class="flex flex-wrap justify-center pt-4">
-      <a href="https://www.github.com/lukehagar" class="content-center">
+      <a
+        href="https://www.github.com/lukehagar"
+        target="_blank"
+        class="content-center"
+      >
         <img
           alt="My Personal GitHub Stats"
           href="https://www.github.com/lukehagar"
           src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/overview.svg#gh-dark-mode-only"
         />
       </a>
-      <a href="https://www.github.com/lukehagar" class="content-center">
+      <a
+        href="https://www.github.com/lukehagar"
+        target="_blank"
+        class="content-center"
+      >
         <img
           alt="My Personal GitHub Stats"
           href="https://www.github.com/lukehagar"
           src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/languages.svg#gh-dark-mode-only"
         />
       </a>
-      <a href="https://www.github.com/luke-hagar-sp" class="content-center">
+      <a
+        href="https://www.github.com/luke-hagar-sp"
+        target="_blank"
+        class="content-center"
+      >
         <img
           alt="My Work GitHub Stats"
           src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/overview.svg#gh-dark-mode-only"
         />
       </a>
-      <a href="https://www.github.com/luke-hagar-sp" class="content-center">
+      <a
+        href="https://www.github.com/luke-hagar-sp"
+        target="_blank"
+        class="content-center"
+      >
         <img
           alt="My Work GitHub Stats"
           src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/languages.svg#gh-dark-mode-only"
@@ -124,8 +145,11 @@
             {/if}
           </div>
         </div>
-        <Divider />
-        <p>Description:</p>
+        {#if experience.description !== ""}
+          <Divider />
+          <p>Description:</p>
+          <p>{experience.description}</p>
+        {/if}
         <Divider />
         <div class="flex flex-wrap gap-2">
           <p>Skills:</p>
