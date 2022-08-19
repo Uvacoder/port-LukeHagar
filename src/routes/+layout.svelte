@@ -23,6 +23,8 @@
   }
   console.log(analyticsId);
   console.log(import.meta.env.VERCEL_ANALYTICS_ID);
+  console.log(import.meta.env.VITE_VERCEL_ANALYTICS_ID);
+  console.log(import.meta.env);
   console.log(browser);
   console.log(page);
   console.log(data);
