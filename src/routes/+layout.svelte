@@ -11,7 +11,7 @@
   import { browser } from "$app/env";
   import { page } from "$app/stores";
   export let data;
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  let analyticsId = import.meta.env.VITE_VERCEL_ANALYTICS_ID;
 
   $: if (browser && analyticsId) {
     webVitals({
@@ -21,12 +21,6 @@
     });
     console.log(analyticsId);
   }
-  console.log(analyticsId);
-  console.log(import.meta.env.VERCEL_ANALYTICS_ID);
-  console.log(import.meta.env.VITE_VERCEL_ANALYTICS_ID);
-  console.log(import.meta.env);
-  console.log(browser);
-  console.log(page);
   console.log(data);
 </script>
 
