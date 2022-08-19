@@ -7,6 +7,20 @@
   import Footer from "../components/Footer.svelte";
   import NavBar from "../components/NavBar.svelte";
   import title from "../stores/title";
+  import webVitals from "../assets/vitals";
+  import { browser } from "$app/env";
+  import { page } from "$app/stores";
+
+  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+  $: if (browser && analyticsId) {
+    webVitals({
+      path: $page.url.pathname,
+      params: $page.params,
+      analyticsId,
+    });
+  }
+
   export let data;
   console.log(data);
 </script>
@@ -17,7 +31,7 @@
   card="bg-primary-500"
   duration={250}
 />
-<body class="flex flex-col bg-surface-500 min-h-screen">
+<body class="flex min-h-screen flex-col bg-surface-500">
   <NavBar currentPage={$title} />
   <Body>
     <slot />

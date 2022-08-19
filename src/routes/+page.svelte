@@ -1,6 +1,5 @@
 <script>
-  import { Avatar, Divider, Logo, LogoCloud } from "@brainandbones/skeleton";
-  import { Card } from "@brainandbones/skeleton";
+  import { Avatar, Card, Divider } from "@brainandbones/skeleton";
   import sailpoint from "../sailpoint.svg";
   import title from "../stores/title";
 
@@ -44,10 +43,11 @@
 
 <svelte:head>
   <title>{$title}</title>
+  <meta name="description" content="LukeHagar.com" />
 </svelte:head>
 
 <div class="flex flex-wrap justify-center">
-  <div class="grid grid-cols-1 gap-1 justify-center">
+  <div class="grid grid-cols-1 justify-center gap-1">
     <div class="flex flex-wrap justify-center">
       <Avatar
         initials="LH"
@@ -58,7 +58,7 @@
         hover={true}
       />
       <div class="flex flex-col items-center pt-12 pl-6 ">
-        <h1 class="font-bold text-center ">Hey I'm Luke</h1>
+        <h1 class="text-center font-bold ">Hey I'm Luke</h1>
         <p class="text-center ">And I enjoy making things.</p>
       </div>
     </div>
@@ -83,28 +83,28 @@
 <div class="rounded-xl pt-8">
   <p class="text-center">Previous Experience</p>
   <Divider />
-  <div class="pt-4 px-2 flex flex-wrap gap-3">
+  <div class="flex flex-wrap gap-3 px-2 pt-4">
     {#each experiences as experience}
       <Card
         background="bg-white"
         color="text-black"
-        class="shadow-2xl grow flex flex-col gap-2"
+        class="flex grow flex-col gap-2 shadow-2xl"
       >
         <div class=" flex flex-row justify-between">
           <div>
-            <p class="text-black text-xl">{experience.title}</p>
-            <p class="text-black text-md">{experience.company}</p>
+            <p class="text-xl text-black">{experience.title}</p>
+            <p class="text-md text-black">{experience.company}</p>
           </div>
           <div class="">
             {#if experience.company === "Whole Foods"}
               <img
-                class="w-12 h-12  rounded-full"
+                class="h-12 w-12  rounded-full"
                 src={experience.logo}
                 alt={experience.company}
               />
             {:else}
               <img
-                class="w-32 h-12"
+                class="h-12 w-32"
                 src={experience.logo}
                 alt={experience.company}
               />
