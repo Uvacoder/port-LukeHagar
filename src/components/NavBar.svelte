@@ -5,7 +5,7 @@
 
 <div class="px-2 pt-1">
   <Card background="bg-surface-800" color="text-white" class="shadow-2xl">
-    <div class="rounded-xl grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 gap-4 rounded-xl lg:grid-cols-2">
       <div class="flex justify-center gap-2 lg:justify-start">
         <GradientHeading
           tag="h1"
@@ -16,7 +16,7 @@
         >
       </div>
       <div
-        class="flex justify-center gap-2 lg:flex-row lg:justify-end flex-col"
+        class="flex flex-col justify-center gap-2 lg:flex-row lg:justify-end"
       >
         <Button
           size="base"
