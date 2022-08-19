@@ -19,7 +19,6 @@
       params: $page.params,
       analyticsId,
     });
-    console.log(analyticsId);
   }
   console.log(data);
 </script>
