@@ -10,8 +10,9 @@
   import webVitals from "../assets/vitals";
   import { browser } from "$app/env";
   import { page } from "$app/stores";
-
+  export let data;
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  let secondTry = process.env.VERCEL_ANALYTICS_ID;
 
   $: if (browser && analyticsId) {
     webVitals({
@@ -22,9 +23,9 @@
     console.log(analyticsId);
   }
   console.log(analyticsId);
+  console.log(secondTry);
   console.log(browser);
   console.log(page);
-  export let data;
   console.log(data);
 </script>
 
