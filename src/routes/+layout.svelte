@@ -21,7 +21,9 @@
     });
     console.log(analyticsId);
   }
-
+  console.log(analyticsId);
+  console.log(browser);
+  console.log(page);
   export let data;
   console.log(data);
 </script>
