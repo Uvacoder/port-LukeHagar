@@ -67,13 +67,26 @@
         <img
           alt="My Personal GitHub Stats"
           href="https://www.github.com/lukehagar"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=lukehagar&theme=vue"
+          src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/overview.svg#gh-dark-mode-only"
+        />
+      </a>
+      <a href="https://www.github.com/lukehagar" class="content-center">
+        <img
+          alt="My Personal GitHub Stats"
+          href="https://www.github.com/lukehagar"
+          src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/languages.svg#gh-dark-mode-only"
         />
       </a>
       <a href="https://www.github.com/luke-hagar-sp" class="content-center">
         <img
           alt="My Work GitHub Stats"
-          src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=luke-hagar-sp&theme=vue"
+          src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/overview.svg#gh-dark-mode-only"
+        />
+      </a>
+      <a href="https://www.github.com/luke-hagar-sp" class="content-center">
+        <img
+          alt="My Work GitHub Stats"
+          src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/languages.svg#gh-dark-mode-only"
         />
       </a>
     </div>
