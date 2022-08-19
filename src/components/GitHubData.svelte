@@ -1,5 +1,5 @@
 <script>
-  import { Card } from "@brainandbones/skeleton";
+  import { Button, Card } from "@brainandbones/skeleton";
 
   let githubRepos = [
     {
@@ -12,7 +12,7 @@
         },
       ],
       localPath: "/warden",
-      description: "A Electron/Web App for playing Plex Music on the Desktop",
+      description: "A Electron App for Plex Music",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Warden",
       ],
@@ -45,6 +45,11 @@
           name: "GitHub",
           repoUrl: "https://github.com/LukeHagar/Anchor",
         },
+        {
+          name: "Chrome Web Store",
+          repoUrl:
+            "https://chrome.google.com/webstore/detail/anchor/opooagfnjoclbafkbgeeokllilaepiap",
+        },
       ],
       localPath: "/anchor",
       description:
@@ -64,7 +69,7 @@
       ],
       localPath: "/va-log-parser",
       description:
-        "A Node CLI tool to automatically parse and organie Sailpoint VA logs",
+        "A Node CLI tool to automatically parse and organize Sailpoint VA logs",
       images: [
         "https://img.shields.io/lgtm/grade/javascript/github/LukeHagar/Anchor",
       ],
@@ -87,57 +92,58 @@
   ];
 </script>
 
-<div class="flex flex-wrap gap-4">
+<div class="flex flex-auto flex-wrap gap-4">
   {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
-    <Card
+    <Button
       background="bg-white"
       color="text-black"
-      class="my-1 px-2 shadow-xl grow"
+      class="my-1 grow shadow-2xl"
+      href={repo.localPath}
+      target="_blank"
     >
-      <a href={repo.localPath}>
-        <div class="py-2">
-          <div class="flex flex-row justify-center">
-            <p class="text-xl text-center">{repo.name}</p>
-            <p class="text-xl text-center px-2">-</p>
-            {#if repo.language === "JavaScript"}
-              <p class="text-xl text-center text-[#f7df1e]">
-                {repo.language}
-              </p>
-            {/if}
-            {#if repo.language === "React.js"}
-              <p class="text-xl text-center text-[#3391ff]">
-                {repo.language}
-              </p>
-            {/if}
-            {#if repo.language === "Svelte"}
-              <p class="text-xl text-center text-[#ff511a]">
-                {repo.language}
-              </p>
-            {/if}
-          </div>
-          <div class="flex flex-row justify-center">
-            <p class="text-sm text-center">Sources:</p>
-            <div class="flex flex-row flex-wrap justify-center">
-              {#each repo.sources as source}
-                <a
-                  class="text-sm underline text-blue-600 px-2"
-                  href={source.repoUrl}>{source.name}</a
-                >
-              {/each}
-            </div>
-          </div>
-
-          <p class="text-black text-center">{repo.description}</p>
-
-          <div class="flex flex-wrap justify-center">
-            {#each repo.images as imgSource}
-              <div class="py-1 px-1">
-                <img alt="Repo Tags" src={imgSource} />
-              </div>
-            {/each}
-          </div>
+      <div class="flex flex-row justify-center">
+        <p class="text-center text-xl">{repo.name}</p>
+        <p class="px-2 text-center text-xl">-</p>
+        {#if repo.language === "JavaScript"}
+          <p class="text-center text-xl text-[#f7df1e]">
+            {repo.language}
+          </p>
+        {/if}
+        {#if repo.language === "React.js"}
+          <p class="text-center text-xl text-[#3391ff]">
+            {repo.language}
+          </p>
+        {/if}
+        {#if repo.language === "Svelte"}
+          <p class="text-center text-xl text-[#ff511a]">
+            {repo.language}
+          </p>
+        {/if}
+      </div>
+      <div class="flex flex-row justify-center">
+        <p class="text-center text-sm">Sources:</p>
+        <div class="flex flex-row flex-wrap justify-center">
+          {#each repo.sources as source}
+            <a
+              class="px-2 text-sm text-blue-600 underline"
+              href={source.repoUrl}
+              target="_blank"
+            >
+              {source.name}
+            </a>
+          {/each}
         </div>
-      </a>
-    </Card>
+      </div>
+
+      <p class="text-center text-black">{repo.description}</p>
+
+      <div class="flex flex-wrap justify-center">
+        {#each repo.images as imgSource}
+          <div class="py-1 px-1">
+            <img alt="Repo Tags" src={imgSource} />
+          </div>
+        {/each}
+      </div>
+    </Button>
   {/each}
 </div>

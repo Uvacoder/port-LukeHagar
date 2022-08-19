@@ -18,7 +18,7 @@
 
 <h1 class=" py-2 text-center">Posts:</h1>
 <Divider class="py-2" />
-<div class="flex flex-wrap justify-center gap-2">
+<div class="flex flex-wrap justify-start gap-4">
   {#each posts as post}
     <Post {post} />
   {/each}
@@ -28,7 +28,7 @@
 <div class="flex flex-wrap justify-center gap-2">
   {#each tags as tag}
     <a
-      class="underline text-xl"
+      class="text-xl underline"
       href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}>{tag}</a
     >
   {/each}
