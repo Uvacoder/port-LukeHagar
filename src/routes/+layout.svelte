@@ -19,6 +19,7 @@
       params: $page.params,
       analyticsId,
     });
+    console.log(analyticsId);
   }
 
   export let data;
