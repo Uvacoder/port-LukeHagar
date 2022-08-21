@@ -28,6 +28,7 @@
           width="w-auto"
           disabled={currentPage === "Home"}
           class="grow hover:animate-pulse"
+          sveltekit:prefetch
           href="/"
         >
           Home
@@ -42,6 +43,7 @@
           width="w-auto"
           disabled={currentPage === "Projects"}
           class="grow hover:animate-pulse"
+          sveltekit:prefetch
           href="/projects"
         >
           Projects
@@ -56,6 +58,7 @@
           width="w-auto"
           disabled={currentPage === "Blog"}
           class="grow hover:animate-pulse"
+          sveltekit:prefetch
           href="/blog/posts"
         >
           Blog
@@ -71,6 +74,7 @@
             width="w-auto"
             disabled={false}
             class="grow hover:animate-pulse"
+            sveltekit:prefetch
             href="https://www.github.com/lukehagar/"
             target="_blank"
           >
@@ -86,6 +90,7 @@
             width="w-auto"
             disabled={false}
             class="grow hover:animate-pulse"
+            sveltekit:prefetch
             href="https://www.linkedin.com/in/lukehagar/"
             target="_blank"
           >
