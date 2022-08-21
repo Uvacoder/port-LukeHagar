@@ -82,11 +82,12 @@
       <a
         href="https://www.github.com/lukehagar"
         target="_blank"
-        class="min-h-fit content-center"
+        class="content-center"
       >
         <img
           alt="My Personal GitHub Stats"
           href="https://www.github.com/lukehagar"
+          class="min-h-fit"
           src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/languages.svg#gh-dark-mode-only"
         />
       </a>
