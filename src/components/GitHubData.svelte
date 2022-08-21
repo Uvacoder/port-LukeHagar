@@ -135,7 +135,7 @@
         </div>
       </div>
 
-      <p class="text-center text-black">{repo.description}</p>
+      <p class="whitespace-normal text-center text-black">{repo.description}</p>
 
       <div class="flex flex-wrap justify-center">
         {#each repo.images as imgSource}

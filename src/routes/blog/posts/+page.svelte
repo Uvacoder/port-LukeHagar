@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import { Divider } from "@brainandbones/skeleton";
+  import { Button, Divider } from "@brainandbones/skeleton";
   import Post from "../../../components/Post.svelte";
   import title from "../../../stores/title";
   title.set("Blog");
@@ -18,7 +18,7 @@
 
 <h1 class=" py-2 text-center">Posts:</h1>
 <Divider class="py-2" />
-<div class="flex flex-wrap justify-start gap-4">
+<div class="flex flex-wrap justify-center gap-4">
   {#each posts as post}
     <Post {post} />
   {/each}
@@ -27,9 +27,11 @@
 <Divider class="py-2" />
 <div class="flex flex-wrap justify-center gap-2">
   {#each tags as tag}
-    <a
+    <Button
       class="text-xl underline"
-      href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}>{tag}</a
+      href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}
     >
+      {tag}
+    </Button>
   {/each}
 </div>
