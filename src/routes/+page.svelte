@@ -71,7 +71,7 @@
       <a
         href="https://www.github.com/lukehagar"
         target="_blank"
-        class="content-center"
+        class="min-h-fit content-center"
       >
         <img
           alt="My Personal GitHub Stats"
@@ -82,7 +82,7 @@
       <a
         href="https://www.github.com/lukehagar"
         target="_blank"
-        class="content-center"
+        class="min-h-fit content-center"
       >
         <img
           alt="My Personal GitHub Stats"
@@ -95,7 +95,7 @@
       <a
         href="https://www.github.com/luke-hagar-sp"
         target="_blank"
-        class="content-center"
+        class="min-h-fit content-center"
       >
         <img
           alt="My Work GitHub Stats"
@@ -105,7 +105,7 @@
       <a
         href="https://www.github.com/luke-hagar-sp"
         target="_blank"
-        class="content-center"
+        class="min-h-fit content-center"
       >
         <img
           alt="My Work GitHub Stats"
