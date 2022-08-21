@@ -71,11 +71,12 @@
       <a
         href="https://www.github.com/lukehagar"
         target="_blank"
-        class="min-h-fit content-center"
+        class="content-center"
       >
         <img
           alt="My Personal GitHub Stats"
           href="https://www.github.com/lukehagar"
+          class="min-h-fit"
           src="https://raw.githubusercontent.com/lukehagar/github-stats/master/generated/overview.svg#gh-dark-mode-only"
         />
       </a>
@@ -96,20 +97,22 @@
       <a
         href="https://www.github.com/luke-hagar-sp"
         target="_blank"
-        class="min-h-fit content-center"
+        class="content-center"
       >
         <img
           alt="My Work GitHub Stats"
+          class="min-h-fit"
           src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/overview.svg#gh-dark-mode-only"
         />
       </a>
       <a
         href="https://www.github.com/luke-hagar-sp"
         target="_blank"
-        class="min-h-fit content-center"
+        class="content-center"
       >
         <img
           alt="My Work GitHub Stats"
+          class="min-h-fit"
           src="https://raw.githubusercontent.com/luke-hagar-sp/github-stats/master/generated/languages.svg#gh-dark-mode-only"
         />
       </a>
