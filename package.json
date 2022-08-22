@@ -11,6 +11,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
+		"@brainandbones/skeleton": "^0.30.7",
 		"@playwright/test": "^1.22.2",
 		"@rgossiaux/svelte-headlessui": "^1.0.2",
 		"@rgossiaux/svelte-heroicons": "^0.1.2",
@@ -31,9 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@brainandbones/skeleton": "file:brainandbones-skeleton-0.30.6.tgz",
 		"axios": "^0.27.2",
-		"highlight.js": "^11.6.0",
 		"mdsvex": "^0.10.6",
 		"plex-api-oauth": "^1.2.7",
 		"prettier-plugin-svelte": "^2.7.0",
