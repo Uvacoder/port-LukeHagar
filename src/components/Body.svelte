@@ -1,11 +1,3 @@
-<script>
-  import { Card } from "@brainandbones/skeleton";
-</script>
-
-<Card
-  background="dark:bg-primary-500 bg-white"
-  color="text-white"
-  class="shadow-2xl grow m-2"
->
+<div class="mt-8 overflow-auto p-10">
   <slot />
-</Card>
+</div>

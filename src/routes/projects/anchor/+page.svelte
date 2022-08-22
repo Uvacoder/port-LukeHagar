@@ -1,5 +1,5 @@
 <script>
-  import title from "../../stores/title";
+  import title from "../../../stores/title";
   title.set("Anchor");
 </script>
 

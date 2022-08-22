@@ -5,8 +5,8 @@
 </script>
 
 <Button
-  background="bg-white"
-  color="text-black"
+  background="bg-surface-900"
+  color="text-white"
   class="flex shadow-2xl"
   href={post.path}
 >

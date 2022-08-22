@@ -11,19 +11,29 @@
   <title>{tag.displayName}</title>
 </svelte:head>
 
-<h1 class=" py-2 text-center">Posts tagged {tag.displayName}:</h1>
-<Divider class="py-2" />
-<div class="flex flex-wrap justify-center gap-4">
-  {#each posts.filter((Obj) => Obj.tags.includes(tag.displayName)) as post}
-    <Post {post} />
-  {/each}
-</div>
-<h1 class=" pt-8 pb-2 text-center">Tags:</h1>
-<Divider class="py-2" />
-<div class="flex flex-wrap justify-center gap-2">
-  {#each tags as postTag}
-    <Button class="text-xl underline" href={`/blog/${postTag.tag}`}>
-      {postTag.displayName}
-    </Button>
-  {/each}
+<div class="grow">
+  <div class="flex flex-row justify-center gap-10 py-2">
+    <a href="/blog/posts" class="text-center">Clear</a>
+    <h1 class=" text-center">Posts tagged {tag.displayName}</h1>
+  </div>
+  <Divider class="py-2" />
+  <div class="flex flex-wrap justify-center gap-4">
+    {#each posts.filter((Obj) => Obj.tags.includes(tag.displayName)) as post}
+      <Post {post} />
+    {/each}
+  </div>
+  <h1 class=" pt-8 pb-2 text-center">Tags:</h1>
+  <Divider class="py-2" />
+  <div class="flex flex-wrap justify-center gap-2">
+    {#each tags as postTag}
+      <Button
+        class="text-xl underline"
+        background="bg-surface-900"
+        color="text-white"
+        href={`/blog/${postTag.tag}`}
+      >
+        {postTag.displayName}
+      </Button>
+    {/each}
+  </div>
 </div>

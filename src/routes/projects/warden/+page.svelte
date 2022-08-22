@@ -1,6 +1,6 @@
 <script>
   import { CodeBlock } from "@brainandbones/skeleton";
-  import title from "../../stores/title";
+  import title from "../../../stores/title";
   title.set("Warden");
 </script>
 
@@ -8,10 +8,12 @@
   <title>{$title}</title>
 </svelte:head>
 
-<div class="prose max-w-none">
-  <h1 class="text-center">{$title}</h1>
+<div class="prose max-w-none text-white">
+  <h1 class="text-center text-white">{$title}</h1>
 
-  <a class="underline " href="https://github.com/LukeHagar/Warden">Repo link</a>
+  <a class="text-blue-500 underline" href="https://github.com/LukeHagar/Warden"
+    >Repo link</a
+  >
   <p class="">
     I'll be honest I was so excited about this project before I got this deep
     into it, and I have really realized a couple things
