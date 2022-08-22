@@ -90,10 +90,10 @@
   </AccordionGroup>
 </div>
 <div>
-  <div class="p-2 mt-4 grid grid-cols-1 gap-2 justify-center">
+  <div class="mt-4 grid grid-cols-1 justify-center gap-2 p-2">
     <p class="text-center">Client & Auth Information</p>
     <Divider />
-    <div class="xl:grid xl:grid-cols-2 gap-2 flex flex-col pt-2">
+    <div class="flex flex-col gap-2 pt-2 xl:grid xl:grid-cols-2">
       <Button
         size="xl:xl sm"
         background="bg-black"
@@ -112,9 +112,10 @@
         CreatePlexClientInformation()
       </Button>
       <div class="flex justify-center">
-        <div class="overflow-hidden flex flex-col justify-center">
+        <div class="flex flex-col justify-center overflow-hidden">
           <p class="text-center">Command:</p>
           <CodeBlock
+            highlighter="highlightjs"
             class="text-start"
             language="JavaScript"
             code={`let input = {product:"LukeHagar.com"}
@@ -122,7 +123,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
           />
         </div>
       </div>
-      <div class="overflow-hidden flex flex-col justify-center">
+      <div class="flex flex-col justify-center overflow-hidden">
         <p class="text-center">plexClientInformation</p>
         <CodeBlock
           class="text-start"
@@ -131,7 +132,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
         />
       </div>
     </div>
-    <div class="xl:grid xl:grid-cols-2 gap-2 flex flex-col">
+    <div class="flex flex-col gap-2 xl:grid xl:grid-cols-2">
       <Button
         size="xl:xl sm"
         background="bg-black"
@@ -149,7 +150,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
         PlexLogin()
       </Button>
       <div class="flex justify-center">
-        <div class="overflow-hidden flex flex-col justify-center">
+        <div class="flex flex-col justify-center overflow-hidden">
           <p class="text-center">Command:</p>
           <CodeBlock
             class="text-start"
@@ -158,7 +159,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
           />
         </div>
       </div>
-      <div class="overflow-hidden flex flex-col justify-center">
+      <div class="flex flex-col justify-center overflow-hidden">
         <p class="text-center">plexLoginInformation</p>
         <CodeBlock
           class="text-start"
@@ -167,7 +168,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
         />
       </div>
     </div>
-    <div class="xl:grid xl:grid-cols-2 gap-2 flex flex-col">
+    <div class="flex flex-col gap-2 xl:grid xl:grid-cols-2">
       <div class="xl:col-span-2">
         <p class="text-center">API Interactions</p>
         <Divider class="m-2 p-2" />
@@ -183,9 +184,9 @@ plexClientInformation = CreatePlexClientInformation(input);`}
         </TabGroup>
         <div class="grid grid-cols-1 gap-2">
           {#if $storeTab === "Servers/Devices"}
-            <div class="flex flex-wrap gap-1 justify-center pt-2">
+            <div class="flex flex-wrap justify-center gap-1 pt-2">
               <div
-                class="flex flex-wrap gap-1 justify-center grow overflow-hidden"
+                class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
               >
                 <div class="flex flex-col justify-center">
                   <Button
@@ -208,7 +209,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
                     Get Plex Servers
                   </Button>
                 </div>
-                <div class="overflow-hidden flex flex-col justify-center">
+                <div class="flex flex-col justify-center overflow-hidden">
                   <p class="text-center">Command</p>
                   <CodeBlock
                     class="text-start"
@@ -221,7 +222,7 @@ plexLoginInformation
                 </div>
               </div>
               <div
-                class="flex flex-wrap gap-1 justify-center grow overflow-hidden"
+                class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
               >
                 <div class="flex flex-col justify-center">
                   <Button
@@ -244,7 +245,7 @@ plexLoginInformation
                   </Button>
                 </div>
 
-                <div class="overflow-hidden flex flex-col justify-center">
+                <div class="flex flex-col justify-center overflow-hidden">
                   <p class="text-center">Command</p>
                   <CodeBlock
                     class="text-start"
@@ -259,9 +260,9 @@ plexLoginInformation
             </div>
           {/if}
           {#if $storeTab === "UserData"}
-            <div class="flex-wrap gap-2 flex pt-2">
+            <div class="flex flex-wrap gap-2 pt-2">
               <div
-                class="flex flex-wrap gap-1 justify-center grow overflow-hidden"
+                class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
               >
                 <div class="flex flex-col justify-center">
                   <Button
@@ -283,7 +284,7 @@ plexLoginInformation
                     GetPlexUserData()
                   </Button>
                 </div>
-                <div class="overflow-hidden flex flex-col justify-center">
+                <div class="flex flex-col justify-center overflow-hidden">
                   <p class="text-center">Command</p>
                   <CodeBlock
                     class="text-start"
@@ -295,9 +296,9 @@ plexLoginInformation
             </div>
           {/if}
           {#if $storeTab === "Libraries"}
-            <div class="flex flex-wrap gap-1 justify-center pt-2">
+            <div class="flex flex-wrap justify-center gap-1 pt-2">
               <div
-                class="flex flex-wrap gap-1 justify-center grow overflow-hidden"
+                class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
               >
                 <div class="flex flex-col justify-center">
                   <Button
@@ -316,7 +317,7 @@ plexLoginInformation
                     GetPlexLibraries()
                   </Button>
                 </div>
-                <div class="overflow-hidden flex flex-col justify-center">
+                <div class="flex flex-col justify-center overflow-hidden">
                   <p class="text-center">Command</p>
                   <CodeBlock
                     class="text-start"
@@ -326,7 +327,7 @@ plexLoginInformation
                 </div>
               </div>
               <div
-                class="flex flex-wrap gap-1 justify-center grow overflow-hidden"
+                class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
               >
                 <div class="flex flex-col justify-center">
                   <Button
@@ -346,7 +347,7 @@ plexLoginInformation
                   </Button>
                 </div>
 
-                <div class="overflow-hidden flex flex-col justify-center">
+                <div class="flex flex-col justify-center overflow-hidden">
                   <p class="text-center">Command</p>
                   <CodeBlock
                     class="text-start"
