@@ -133,10 +133,7 @@
   duration={250}
 />
 
-<canvas
-  id="background"
-  class="fixed top-0 left-0 min-h-[844] lg:min-h-screen"
-/>
+<canvas id="background" class="fixed top-0 left-0 h-screen" />
 <div class="absolute flex w-full flex-row text-white">
   <Drawer
     visible={drawer}
@@ -198,7 +195,7 @@
   </Drawer>
 
   <!-- Page Content -->
-  <div id="main" class="flex flex-col">
+  <div id="main" class="flex grow flex-col">
     <header class=" space-x-4 p-8 lg:hidden">
       <!-- Hamburger Menu -->
       <Button variant="minimal" on:click={drawerOpen}>
