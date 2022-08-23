@@ -133,7 +133,7 @@
   duration={250}
 />
 
-<canvas id="background" class="fixed top-0 left-0" />
+<canvas id="background" class="fixed top-0 left-0 min-h-screen" />
 <div class="absolute flex w-full flex-row text-white">
   <Drawer
     visible={drawer}
