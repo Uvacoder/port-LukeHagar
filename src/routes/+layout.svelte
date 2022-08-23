@@ -145,7 +145,7 @@
   duration={250}
 />
 
-<div class="min-w-screen min-w-screen flex min-h-screen grow bg-black">
+<div class="bg-black">
   <canvas id="background" class="fixed h-screen w-screen" />
   <div class="absolute flex w-full grow flex-row text-white">
     <Drawer
@@ -223,12 +223,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  @supports (-webkit-touch-callout: none) {
-    .fullscreen {
-      height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-      height: calc(var(--vh, 1vh) * 100);
-    }
-  }
-</style>
