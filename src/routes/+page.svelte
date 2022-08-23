@@ -10,7 +10,7 @@
   <meta name="description" content="LukeHagar.com" />
 </svelte:head>
 
-<div class="flex flex-col content-center justify-center bg-transparent">
+<div class="flex grow flex-col content-center justify-center bg-transparent">
   <div class="flex flex-wrap justify-center ">
     <Avatar
       initials="LH"
