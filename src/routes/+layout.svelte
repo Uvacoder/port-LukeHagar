@@ -145,81 +145,92 @@
   duration={250}
 />
 
-<div class="bg-black">
-  <canvas id="background" class="fixed h-screen w-screen" />
-  <div class="absolute flex w-full grow flex-row text-white">
-    <Drawer
-      visible={drawer}
-      fixed="left"
-      background="lg:bg-transparent"
-      border="border-0"
-      class="p-4"
-    >
-      <svelte:fragment slot="header">
-        <div class="flex items-center justify-center  p-4">
-          <a href="/" class="text-xl font-bold">
-            <GradientHeading
-              tag="h1"
-              class="text-3xl"
-              direction="bg-gradient-to-r"
-              from="from-primary-500"
-              to="to-accent-500"
-              >Luke Hagar
-            </GradientHeading>
-          </a>
-        </div>
-      </svelte:fragment>
-      <svelte:fragment slot="main">
-        <AccordionGroup selected={storeAccordion} single>
-          {#each navigation as { title, list }, i}
-            <div
-              on:mouseenter={() => {
-                storeAccordion.set([i]);
-              }}
-              on:mouseleave={() => {
-                storeAccordion.set([]);
-              }}
-            >
-              <AccordionItem value={i}>
-                <svelte:fragment slot="title">
-                  <p class="text-white">{title}</p>
-                </svelte:fragment>
-                <svelte:fragment slot="description">
-                  {#each list as { href, label }}
-                    <div class="flex-col">
-                      <Button
-                        size="base"
-                        color="text-white"
-                        background="bg-transparent"
-                        width="w-auto"
-                        {href}
-                        disabled={false}
-                      >
-                        {label}
-                      </Button>
-                    </div>
-                  {/each}
-                </svelte:fragment>
-              </AccordionItem>
-            </div>
-          {/each}
-        </AccordionGroup>
-      </svelte:fragment>
-    </Drawer>
+<canvas id="background" />
 
-    <!-- Page Content -->
-    <div id="main" class="flex grow flex-col">
-      <header class=" space-x-4 p-8 lg:hidden">
-        <!-- Hamburger Menu -->
-        <Button variant="minimal" on:click={drawerOpen}>
-          <span class="font-bold text-white">Menu</span>
-        </Button>
-      </header>
-
-      <!-- Page Slot -->
-      <div class="flex grow content-center p-6">
-        <slot />
+<div class="flex h-screen w-screen flex-row text-white">
+  <Drawer
+    visible={drawer}
+    fixed="left"
+    background="lg:bg-transparent"
+    border="border-0"
+    class="p-4"
+  >
+    <svelte:fragment slot="header">
+      <div class="flex items-center justify-center  p-4">
+        <a href="/" class="text-xl font-bold">
+          <GradientHeading
+            tag="h1"
+            class="text-3xl"
+            direction="bg-gradient-to-r"
+            from="from-primary-500"
+            to="to-accent-500"
+            >Luke Hagar
+          </GradientHeading>
+        </a>
       </div>
+    </svelte:fragment>
+    <svelte:fragment slot="main">
+      <AccordionGroup selected={storeAccordion} single>
+        {#each navigation as { title, list }, i}
+          <div
+            on:mouseenter={() => {
+              storeAccordion.set([i]);
+            }}
+            on:mouseleave={() => {
+              storeAccordion.set([]);
+            }}
+          >
+            <AccordionItem value={i}>
+              <svelte:fragment slot="title">
+                <p class="text-white">{title}</p>
+              </svelte:fragment>
+              <svelte:fragment slot="description">
+                {#each list as { href, label }}
+                  <div class="flex-col">
+                    <Button
+                      size="base"
+                      color="text-white"
+                      background="bg-transparent"
+                      width="w-auto"
+                      {href}
+                      disabled={false}
+                    >
+                      {label}
+                    </Button>
+                  </div>
+                {/each}
+              </svelte:fragment>
+            </AccordionItem>
+          </div>
+        {/each}
+      </AccordionGroup>
+    </svelte:fragment>
+  </Drawer>
+
+  <!-- Page Content -->
+  <div class="flex h-screen w-screen flex-col">
+    <header class=" pt-8 pl-8 lg:hidden">
+      <!-- Hamburger Menu -->
+      <Button variant="minimal" on:click={drawerOpen}>
+        <span class="font-bold text-white">Menu</span>
+      </Button>
+    </header>
+
+    <!-- Page Slot -->
+    <div class="p-6 lg:flex lg:grow lg:content-center">
+      <slot />
     </div>
   </div>
 </div>
+
+<style>
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -999;
+  }
+</style>

@@ -29,7 +29,7 @@
         </div>
         <div class="flex justify-end">
           {#if date}
-            <p class="py-2 px-2 text-xl">On: {date}</p>
+            <p class="whitespace-nowrap py-2 px-2 text-xl">On: {date}</p>
           {/if}
         </div>
         <div class="col-span-2">

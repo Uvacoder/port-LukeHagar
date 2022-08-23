@@ -93,12 +93,12 @@
 </script>
 
 <div>
-  <div class="grid grid-cols-3 content-center gap-4">
+  <div class="flex flex-wrap content-center gap-4">
     {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
       <Button
         background="bg-surface-900"
         color="text-white"
-        class="my-1 shadow-2xl"
+        class="my-1 grow shadow-2xl"
         href={repo.localPath}
         target="_blank"
       >
