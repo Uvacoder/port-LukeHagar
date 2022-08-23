@@ -133,7 +133,7 @@
   duration={250}
 />
 
-<canvas id="background" class="fixed top-0 left-0 h-screen" />
+<canvas id="background" class="ios-h-screen fixed top-0 left-0 h-screen" />
 <div class="absolute flex w-full flex-row text-white">
   <Drawer
     visible={drawer}
@@ -212,7 +212,7 @@
 
 <style>
   @supports (-webkit-touch-callout: none) {
-    .h-screen {
+    .ios-h-screen {
       height: -webkit-fill-available;
     }
   }
