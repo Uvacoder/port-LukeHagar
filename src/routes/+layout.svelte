@@ -77,7 +77,7 @@
 
     animate();
 
-    for (const i of Array(1000).fill()) {
+    for (const i of Array(400).fill()) {
       addStar();
     }
 
@@ -145,7 +145,7 @@
   duration={250}
 />
 
-<canvas id="background" class="fullscreen fixed top-0 left-0 h-screen" />
+<canvas id="background" class="fixed w-full" />
 <div class="absolute flex w-full flex-row text-white">
   <Drawer
     visible={drawer}
@@ -225,7 +225,6 @@
 <style>
   @supports (-webkit-touch-callout: none) {
     .fullscreen {
-      height: -webkit-fill-available;
       height: 100vh; /* Fallback for browsers that do not support Custom Properties */
       height: calc(var(--vh, 1vh) * 100);
     }
