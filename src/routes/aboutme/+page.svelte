@@ -53,10 +53,9 @@
 </svelte:head>
 
 <div class="flex flex-col">
-  <p class="prose text-white">I love my Job</p>
   <p class="text-center text-white">Previous Experience</p>
-  <Divider />
-  <div class="flex flex-wrap gap-4">
+  <Divider class="mb-2" />
+  <div class=" flex flex-wrap gap-4">
     {#each experiences as experience}
       <Card
         background="bg-surface-900"
