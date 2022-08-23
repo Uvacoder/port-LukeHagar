@@ -72,7 +72,6 @@
       camera.rotateX(0.0004);
       camera.rotateY(0.0003);
       camera.rotateZ(0.0001);
-
       renderer.render(scene, camera);
     }
 
@@ -135,7 +134,7 @@
 />
 
 <canvas id="background" class="fixed top-0 left-0" />
-<div class="fixed flex w-full text-white">
+<div class="absolute flex w-full flex-row text-white">
   <Drawer
     visible={drawer}
     fixed="left"
@@ -193,11 +192,10 @@
         {/each}
       </AccordionGroup>
     </svelte:fragment>
-    <svelte:fragment slot="footer"><Footer /></svelte:fragment>
   </Drawer>
 
   <!-- Page Content -->
-  <div id="main" class="flex min-h-screen grow flex-col ">
+  <div id="main" class="flex flex-col">
     <header class=" space-x-4 p-8 lg:hidden">
       <!-- Hamburger Menu -->
       <Button variant="minimal" on:click={drawerOpen}>
@@ -206,7 +204,7 @@
     </header>
 
     <!-- Page Slot -->
-    <div class="flex h-full grow content-center p-6">
+    <div class="flex grow content-center p-6">
       <slot />
     </div>
   </div>
