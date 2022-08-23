@@ -20,6 +20,14 @@
   import webVitals from "../assets/vitals";
   import Footer from "../components/Footer.svelte";
 
+  export let data;
+  let { posts } = data;
+  let tags = [];
+  for (const post of posts) {
+    tags.push(...post.tags);
+  }
+  tags = Array.from(new Set([...tags]));
+
   // Drawer
   const drawerOpen = () => {
     console.log("open triggered");
@@ -80,21 +88,8 @@
     for (const i of Array(400).fill()) {
       addStar();
     }
-
-    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
-    let vh = window.innerHeight * 0.01;
-    // Then we set the value in the --vh custom property to the root of the document
-    document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-    // We listen to the resize event
-    window.addEventListener("resize", () => {
-      // We execute the same script as before
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    });
   });
 
-  export let data;
   let analyticsId = import.meta.env.VITE_VERCEL_ANALYTICS_ID;
 
   let storeAccordion = writable([]);
@@ -125,6 +120,17 @@
       ],
     },
     {
+      title: "Blog Tags",
+      list: [
+        ...tags.map((Obj) => {
+          return {
+            href: `/blog/${Obj.replaceAll(" ", "").toLowerCase()}`,
+            label: Obj,
+          };
+        }),
+      ],
+    },
+    {
       title: "Socials",
       list: [
         { href: "https://www.github.com/lukehagar/", label: "GitHub" },
@@ -134,8 +140,6 @@
   ];
 
   const drawer = writable(false);
-
-  console.log(data);
 </script>
 
 <Dialog
@@ -147,13 +151,13 @@
 
 <canvas id="background" />
 
-<div class="flex h-screen w-screen flex-row text-white">
+<div class=" flex flex-row text-white">
   <Drawer
     visible={drawer}
     fixed="left"
     background="lg:bg-transparent"
     border="border-0"
-    class="p-4"
+    class=" p-4"
   >
     <svelte:fragment slot="header">
       <div class="flex items-center justify-center  p-4">
@@ -170,46 +174,48 @@
       </div>
     </svelte:fragment>
     <svelte:fragment slot="main">
-      <AccordionGroup selected={storeAccordion} single>
-        {#each navigation as { title, list }, i}
-          <div
-            on:mouseenter={() => {
-              storeAccordion.set([i]);
-            }}
-            on:mouseleave={() => {
-              storeAccordion.set([]);
-            }}
-          >
-            <AccordionItem value={i}>
-              <svelte:fragment slot="title">
-                <p class="text-white">{title}</p>
-              </svelte:fragment>
-              <svelte:fragment slot="description">
-                {#each list as { href, label }}
-                  <div class="flex-col">
-                    <Button
-                      size="base"
-                      color="text-white"
-                      background="bg-transparent"
-                      width="w-auto"
-                      {href}
-                      disabled={false}
-                    >
-                      {label}
-                    </Button>
-                  </div>
-                {/each}
-              </svelte:fragment>
-            </AccordionItem>
-          </div>
-        {/each}
-      </AccordionGroup>
+      <div class="no-scrollbar overscroll-contain">
+        <AccordionGroup selected={storeAccordion} single>
+          {#each navigation as { title, list }, i}
+            <div
+              on:mouseenter={() => {
+                storeAccordion.set([i]);
+              }}
+              on:mouseleave={() => {
+                storeAccordion.set([]);
+              }}
+            >
+              <AccordionItem value={i}>
+                <svelte:fragment slot="title">
+                  <p class="text-white">{title}</p>
+                </svelte:fragment>
+                <svelte:fragment slot="description">
+                  {#each list as { href, label }}
+                    <div class="flex-col">
+                      <Button
+                        size="base"
+                        color="text-white"
+                        background="bg-transparent"
+                        width="w-auto"
+                        {href}
+                        disabled={false}
+                      >
+                        {label}
+                      </Button>
+                    </div>
+                  {/each}
+                </svelte:fragment>
+              </AccordionItem>
+            </div>
+          {/each}
+        </AccordionGroup>
+      </div>
     </svelte:fragment>
   </Drawer>
 
   <!-- Page Content -->
-  <div class="flex h-screen w-screen flex-col">
-    <header class=" pt-8 pl-8 lg:hidden">
+  <div class="flex grow flex-col justify-center overflow-hidden p-8">
+    <header class="flex justify-center pb-8 lg:hidden">
       <!-- Hamburger Menu -->
       <Button variant="minimal" on:click={drawerOpen}>
         <span class="font-bold text-white">Menu</span>
@@ -217,7 +223,7 @@
     </header>
 
     <!-- Page Slot -->
-    <div class="p-6 lg:flex lg:grow lg:content-center">
+    <div class="grow xl:flex">
       <slot />
     </div>
   </div>
@@ -232,5 +238,16 @@
     top: 0;
     left: 0;
     z-index: -999;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 </style>
