@@ -197,7 +197,7 @@
   </Drawer>
 
   <!-- Page Content -->
-  <div id="main" class="flex h-screen grow flex-col ">
+  <div id="main" class="flex min-h-screen grow flex-col ">
     <header class=" space-x-4 p-8 lg:hidden">
       <!-- Hamburger Menu -->
       <Button variant="minimal" on:click={drawerOpen}>
