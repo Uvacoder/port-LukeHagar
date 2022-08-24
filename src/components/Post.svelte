@@ -1,7 +1,6 @@
 <script>
   import { Button } from "@brainandbones/skeleton";
   export let post;
-  console.log(post);
 </script>
 
 <Button

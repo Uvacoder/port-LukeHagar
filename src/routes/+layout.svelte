@@ -8,10 +8,12 @@
     GradientHeading,
   } from "@brainandbones/skeleton";
   import "highlight.js/styles/github-dark.css";
+  import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
   import "../app.css";
   import "../theme.css";
 
   import { browser } from "$app/env";
+  import { assets } from "$app/paths";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
@@ -31,61 +33,87 @@
     console.log("open triggered");
     drawer.set(true);
   };
-  const drawerClose = () => {
-    drawer.set(false);
-  };
 
   onMount(() => {
-    const scene = new THREE.Scene();
-    const blackbg = new THREE.Color("black");
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      1,
-      100
+    function onMouseMove(event) {
+      mouse.x = event.clientX - windowHalf.x;
+      mouse.y = event.clientY - windowHalf.x;
+    }
+
+    function onMouseWheel(event) {
+      camera.position.z += event.deltaY * 0.1; // move camera along z-axis
+    }
+    function onWindowResize() {
+      camera.aspect = window.innerWidth / window.innerHeight;
+
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+    document.addEventListener("mousemove", onMouseMove, false);
+    document.addEventListener("wheel", onMouseWheel, false);
+
+    const mouse = new THREE.Vector2();
+    const target = new THREE.Vector2();
+    const windowHalf = new THREE.Vector2(
+      window.innerWidth / 2,
+      window.innerHeight / 2
     );
+
+    let x, y;
+
+    const loader = new THREE.CubeTextureLoader();
+
+    console.log(assets);
+    const texture = loader.load([
+      "/Threejs Assets/blue/bkg1_right.png",
+      "/Threejs Assets/blue/bkg1_left.png",
+      "/Threejs Assets/blue/bkg1_top.png",
+      "/Threejs Assets/blue/bkg1_bot.png",
+      "/Threejs Assets/blue/bkg1_front.png",
+      "/Threejs Assets/blue/bkg1_back.png",
+    ]);
+
+    let scene = new THREE.Scene();
+    let camera = new THREE.PerspectiveCamera(
+      55,
+      window.innerWidth / window.innerHeight,
+      45,
+      30000
+    );
+    camera.position.set(1200, -250, 2000);
+
+    scene.background = texture;
 
     const renderer = new THREE.WebGLRenderer({
       canvas: document.querySelector("#background"),
+      antialias: true,
+      alpha: true,
     });
-
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
 
-    renderer.render(scene, camera);
-
-    function addStar() {
-      console.log("Adding Star");
-      const geometry = new THREE.SphereGeometry(0.25, 6, 6);
-      const material = new THREE.MeshStandardMaterial({
-        color: 0xffffff,
-      });
-      const star = new THREE.Mesh(geometry, material);
-      const [x, y, z] = Array(3)
-        .fill()
-        .map(() => THREE.MathUtils.randFloatSpread(250));
-      star.position.set(x, y, z);
-      scene.add(star);
-    }
-
-    const pointLight = new THREE.PointLight(0xffffff);
-    pointLight.position.set(5, 5, 5);
-    scene.add(pointLight);
+    let controls = new OrbitControls(camera, renderer.domElement);
+    controls.enabled = true;
+    controls.minDistance = 700;
+    controls.maxDistance = 1500;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.05;
 
     function animate() {
       requestAnimationFrame(animate);
-      camera.rotateX(0.0004);
-      camera.rotateY(0.0003);
-      camera.rotateZ(0.0001);
+
+      target.x = (1 - mouse.x) * 0.02;
+      target.y = (1 - mouse.y) * 0.02;
+      camera.rotation.x += 0.05 * (target.y - camera.rotation.x);
+      camera.rotation.y += 0.05 * (target.x - camera.rotation.y);
       renderer.render(scene, camera);
+      controls.update();
     }
+
+    window.addEventListener("resize", onWindowResize, false);
 
     animate();
-
-    for (const i of Array(400).fill()) {
-      addStar();
-    }
   });
 
   let analyticsId = import.meta.env.VITE_VERCEL_ANALYTICS_ID;
@@ -212,7 +240,7 @@
   </Drawer>
 
   <!-- Page Content -->
-  <div class="flex grow flex-col justify-center overflow-hidden p-8">
+  <div class="flex grow flex-col justify-center overflow-hidden p-4">
     <header class="flex justify-center pb-8 lg:hidden">
       <!-- Hamburger Menu -->
       <Button variant="minimal" on:click={drawerOpen}>
