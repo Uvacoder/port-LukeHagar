@@ -92,8 +92,8 @@
   ];
 </script>
 
-<div>
-  <div class="flex flex-wrap content-center gap-4">
+<div class="grow ">
+  <div class=" grid grid-flow-col gap-4">
     {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
       <Button
         background="bg-surface-900"
