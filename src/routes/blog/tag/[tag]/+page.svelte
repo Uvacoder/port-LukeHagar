@@ -1,10 +1,9 @@
 <script>
   export let data;
-  $: ({ tags, tag, posts } = data);
-  import title from "../../../stores/title";
-  import Post from "../../../components/Post.svelte";
+  $: ({ tags, tag, posts, dates } = data);
+  console.log(data);
+  import Post from "$lib/Post.svelte";
   import { Button, Divider, filter } from "@brainandbones/skeleton";
-  title.set("Blog");
 </script>
 
 <svelte:head>
@@ -14,7 +13,7 @@
 <div class="grow">
   <div class="flex flex-row justify-center gap-10 py-2">
     <a href="/blog/posts" class="text-center">Clear</a>
-    <h1 class=" text-center">Posts tagged {tag.displayName}</h1>
+    <h1 class=" text-center">Blog Posts tagged {tag.displayName}</h1>
   </div>
   <Divider class="py-2" />
   <div class="flex flex-wrap justify-center gap-4">
@@ -25,14 +24,28 @@
   <h1 class=" pt-8 pb-2 text-center">Tags:</h1>
   <Divider class="py-2" />
   <div class="flex flex-wrap justify-center gap-2">
-    {#each tags as postTag}
+    {#each tags.sort( (a, b) => a.displayName.localeCompare(b.displayName) ) as postTag}
       <Button
         class="text-xl underline"
         background="bg-surface-900"
         color="text-white"
-        href={`/blog/${postTag.tag}`}
+        href={`/blog/tag/${postTag.tag}`}
       >
         {postTag.displayName}
+      </Button>
+    {/each}
+  </div>
+  <h1 class=" pt-8 pb-2 text-center">Dates:</h1>
+  <Divider class="py-2" />
+  <div class="flex flex-wrap justify-center gap-2">
+    {#each dates as dateEntry}
+      <Button
+        class="text-xl underline"
+        background="bg-surface-900"
+        color="text-white"
+        href={`/blog/date/${dateEntry}`}
+      >
+        {dateEntry}
       </Button>
     {/each}
   </div>

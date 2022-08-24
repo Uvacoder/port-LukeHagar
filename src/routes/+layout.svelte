@@ -148,9 +148,9 @@
     {
       title: "Blog Tags",
       list: [
-        ...tags.map((Obj) => {
+        ...tags.sort().map((Obj) => {
           return {
-            href: `/blog/${Obj.replaceAll(" ", "").toLowerCase()}`,
+            href: `/blog/tag/${Obj.replaceAll(" ", "").toLowerCase()}`,
             label: Obj,
           };
         }),
