@@ -239,16 +239,17 @@
     </svelte:fragment>
   </Drawer>
 
-  <!-- Page Content -->
   <div class="flex grow flex-col justify-center overflow-hidden p-4">
     <header class="flex justify-center pb-8 lg:hidden">
-      <!-- Hamburger Menu -->
-      <Button variant="minimal" on:click={drawerOpen}>
-        <span class="font-bold text-white">Menu</span>
+      <Button
+        size="lg"
+        color="text-white"
+        background="bg-surface-900"
+        on:click={drawerOpen}
+      >
+        <span class="font-bold">Menu</span>
       </Button>
     </header>
-
-    <!-- Page Slot -->
     <div class="grow xl:flex">
       <slot />
     </div>

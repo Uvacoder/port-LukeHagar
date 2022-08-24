@@ -1,7 +1,6 @@
 <script>
   export let data;
   $: ({ tags, tag, posts, dates } = data);
-  console.log(data);
   import Post from "$lib/Post.svelte";
   import { Button, Divider, filter } from "@brainandbones/skeleton";
 </script>
@@ -10,7 +9,7 @@
   <title>{tag.displayName}</title>
 </svelte:head>
 
-<div class="grow">
+<div class="flex grow flex-col content-center justify-center">
   <div class="flex flex-row justify-center gap-10 py-2">
     <a href="/blog/posts" class="text-center">Clear</a>
     <h1 class=" text-center">Blog Posts tagged {tag.displayName}</h1>

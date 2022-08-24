@@ -18,7 +18,7 @@
 <svelte:head>
   <title>{$title}</title>
 </svelte:head>
-<div class="grow">
+<div class="flex grow flex-col content-center justify-center">
   <h1 class=" py-2 text-center">Posts:</h1>
   <Divider class="py-2" />
   <div class="flex flex-wrap justify-center gap-4">

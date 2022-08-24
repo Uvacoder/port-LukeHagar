@@ -3,14 +3,13 @@
   $: ({ tags, tag, posts, dates, date } = data);
   import Post from "$lib/Post.svelte";
   import { Button, Divider, filter } from "@brainandbones/skeleton";
-  console.log(tags);
 </script>
 
 <svelte:head>
   <title>{date}</title>
 </svelte:head>
 
-<div class="grow">
+<div class="flex grow flex-col content-center justify-center">
   <div class="flex flex-row justify-center gap-10 py-2">
     <a href="/blog/posts" class="text-center">Clear</a>
     <h1 class=" text-center">Blog Posts from {date}</h1>

@@ -6,7 +6,6 @@ export async function load({ params }) {
   const allPostFiles = import.meta.glob("../../*/*.{svc,md}", { eager: true });
   const allPosts = Object.entries(allPostFiles).map(([path, post]) => {
     const postPath = `/blog${path.slice(2, -9).replace("../", "")}`;
-    console.log(postPath);
     return { ...post.metadata, path: postPath };
   });
 
