@@ -3,7 +3,6 @@ export async function load({ params }) {
   let tags = [];
   const tag = params.tag;
   const allPostFiles = import.meta.glob("../*/*.{svc,md}", { eager: true });
-  console.log(allPostFiles);
   const allPosts = Object.entries(allPostFiles).map(([path, post]) => {
     const postPath = `/blog${path.slice(2, -9)}`;
     return { ...post.metadata, path: postPath };

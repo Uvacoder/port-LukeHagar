@@ -2,7 +2,6 @@
   import { Button, Card } from "@brainandbones/skeleton";
   import currentPage from "../../stores/title";
   export let data;
-  console.log(data);
   export let title;
   export let author;
   export let date;

@@ -6,7 +6,6 @@
     Dialog,
     Drawer,
     GradientHeading,
-    Menu,
   } from "@brainandbones/skeleton";
   import "highlight.js/styles/github-dark.css";
   import "../app.css";
@@ -18,7 +17,6 @@
   import { writable } from "svelte/store";
   import * as THREE from "three";
   import webVitals from "../assets/vitals";
-  import Footer from "../components/Footer.svelte";
 
   export let data;
   let { posts } = data;
@@ -151,11 +149,11 @@
 
 <canvas id="background" />
 
-<div class=" flex flex-row text-white">
+<div class="relative z-50 flex flex-row text-white">
   <Drawer
     visible={drawer}
     fixed="left"
-    background="lg:bg-transparent"
+    background="bg-surface-900/50 lg:bg-transparent"
     border="border-0"
     class=" p-4"
   >
