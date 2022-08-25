@@ -50,7 +50,7 @@
   </div>
   <Card background="bg-surface-900" color="text-white" class="mt-2">
     <div
-      class="prose flex max-w-none flex-col justify-center text-white prose-headings:underline prose-img:rounded-xl lg:prose-xl xl:prose-2xl"
+      class="prose flex max-w-none flex-col justify-center text-white prose-headings:underline prose-img:rounded-xl"
     >
       <slot />
     </div>
