@@ -143,6 +143,8 @@
       list: [
         { href: "/projects/anchor", label: "Anchor" },
         { href: "/projects/plex-api-oauth", label: "plex-api-oauth" },
+        { href: "/projects/va-log-parser", label: "VA-Log-Parser" },
+        { href: "/projects/warden", label: "Warden" },
       ],
     },
     {
