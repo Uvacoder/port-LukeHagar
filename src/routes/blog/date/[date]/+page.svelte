@@ -1,44 +1,37 @@
 <script>
   export let data;
-  import { Button, Divider } from "@brainandbones/skeleton";
+  $: ({ tags, tag, posts, dates, date } = data);
   import Post from "$lib/Post.svelte";
-  import title from "../../../stores/title";
-  title.set("Blog");
-  let { posts } = data;
-  let tags = [];
-  let dates = [];
-  for (const post of posts) {
-    tags.push(...post.tags);
-    dates.push(post.date);
-  }
-  tags = Array.from(new Set([...tags]));
-  dates = Array.from(new Set([...dates]));
+  import { Button, Divider, filter } from "@brainandbones/skeleton";
 </script>
 
 <svelte:head>
-  <title>{$title}</title>
+  <title>{date}</title>
 </svelte:head>
 
 <div class="grow">
   <div class="flex grow flex-col justify-center">
-    <h1 class=" py-2 text-start">Posts:</h1>
+    <div class="flex flex-row justify-center gap-10 py-2">
+      <h1 class="grow text-start">Blog Posts from {date}</h1>
+      <a href="/blog/posts" class="text-end">Clear</a>
+    </div>
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-4">
-      {#each posts as post}
+      {#each posts.filter((Obj) => Obj.date === date) as post}
         <Post {post} />
       {/each}
     </div>
     <h1 class=" pt-8 pb-2 text-start">Tags:</h1>
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-2">
-      {#each tags.sort((a, b) => a.localeCompare(b)) as tag}
+      {#each tags.sort( (a, b) => a.displayName.localeCompare(b.displayName) ) as postTag}
         <Button
+          class="text-xl underline"
           background="bg-surface-900"
           color="text-white"
-          class="text-xl underline"
-          href={`/blog/tag/${tag.replaceAll(" ", "").toLowerCase()}`}
+          href={`/blog/tag/${postTag.tag}`}
         >
-          {tag}
+          {postTag.displayName}
         </Button>
       {/each}
     </div>
@@ -47,9 +40,9 @@
     <div class="flex flex-wrap justify-center gap-2">
       {#each dates as dateEntry}
         <Button
+          class="text-xl underline"
           background="bg-surface-900"
           color="text-white"
-          class="text-xl underline"
           href={`/blog/date/${dateEntry}`}
         >
           {dateEntry}

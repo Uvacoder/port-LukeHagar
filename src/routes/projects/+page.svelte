@@ -1,9 +1,5 @@
 <script>
-  export let data;
-  import title from "../../stores/title";
-  import GitHubData from "../../components/GitHubData.svelte";
-  title.set("Projects");
-  console.log(data);
+  import GitHubData from "$lib/GitHubData.svelte";
 </script>
 
 <svelte:head>
