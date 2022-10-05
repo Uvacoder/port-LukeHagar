@@ -15,7 +15,7 @@
     <div class="flex flex-wrap justify-center ">
       <Avatar
         initials="LH"
-        src="https://media-exp1.licdn.com/dms/image/C5603AQHP-ZFGPNDbBA/profile-displayphoto-shrink_800_800/0/1640206612663?e=1665619200&v=beta&t=Mhj3gWL9lfhBNk5oepXryDZ8gPpvZEkCK9VwQKHT2lM"
+        src="https://avatars.githubusercontent.com/u/5702154?v=4"
         size="3xl"
         background="bg-surface-500"
         outlined={true}
