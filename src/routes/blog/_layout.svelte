@@ -12,10 +12,13 @@
   <title>{$currentPage}</title>
 </svelte:head>
 
-<div class="flex grow flex-col   text-white">
+<div class="flex grow flex-col text-white">
   <div class="flex flex-row gap-2">
-    <button class="bg-surface-900 text-white" href="/blog/posts">Back</button>
-    <div class="bg-surface-900 flex grow flex-wrap">
+    <a
+      class="items-center rounded-xl bg-surface-900 px-2 py-5 text-white"
+      href="/blog/posts">Back</a
+    >
+    <div class="flex grow flex-wrap rounded-xl bg-surface-900 px-2 py-5">
       <div class="flex grow flex-wrap">
         <div class="flex flex-col justify-start gap-1 px-2">
           <p class="text-xl">{title}</p>
@@ -29,7 +32,7 @@
                 {#each tags as tag}
                   <a
                     class="text-xs underline"
-                    href={`/blog/${tag.replaceAll(" ", "").toLowerCase()}`}
+                    href={`/blog/tag/${tag.replaceAll(" ", "").toLowerCase()}`}
                     >{tag}</a
                   >
                 {/each}
@@ -45,9 +48,9 @@
       </div>
     </div>
   </div>
-  <div class="bg-surface-900 mt-2 text-white ">
+  <div class="mt-2 rounded-xl bg-surface-900 px-2 py-5 text-white ">
     <div
-      class="prose prose-headings:underline prose-img:rounded-xl flex max-w-none flex-col justify-center text-white"
+      class="prose flex max-w-none flex-col justify-center text-white prose-headings:underline prose-img:rounded-xl"
     >
       <slot />
     </div>

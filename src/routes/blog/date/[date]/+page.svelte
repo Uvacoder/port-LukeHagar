@@ -9,7 +9,7 @@
   <title>{date}</title>
 </svelte:head>
 
-<div class="grow">
+<div class="grow text-white">
   <div class="flex grow flex-col justify-center">
     <div class="flex flex-row justify-center gap-10 py-2">
       <h1 class="grow text-start">Blog Posts from {date}</h1>
@@ -26,7 +26,7 @@
     <div class="flex flex-wrap justify-center gap-2">
       {#each tags.sort( (a, b) => a.displayName.localeCompare(b.displayName) ) as postTag}
         <a
-          class="bg-surface-900 text-xl text-white underline"
+          class="rounded-3xl bg-surface-900 p-2 text-xl text-white underline"
           href={`/blog/tag/${postTag.tag}`}
         >
           {postTag.displayName}
@@ -38,7 +38,7 @@
     <div class="flex flex-wrap justify-center gap-2">
       {#each dates as dateEntry}
         <a
-          class="bg-surface-900 text-xl text-white underline"
+          class="rounded-3xl bg-surface-900 p-2 text-xl text-white underline"
           href={`/blog/date/${dateEntry}`}
         >
           {dateEntry}

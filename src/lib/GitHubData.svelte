@@ -94,8 +94,9 @@
   <div class="flex grow flex-wrap justify-center gap-4 xl:grid xl:grid-cols-3 ">
     {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
       <a
-        class="bg-surface-900 my-1 grow text-white shadow-2xl xl:grow-0"
+        class="my-1 grow rounded-xl bg-surface-900 p-2 text-white shadow-2xl xl:grow-0"
         href={repo.localPath}
+        rel="noreferrer"
         target="_blank"
       >
         <div class="flex flex-row justify-center">
@@ -125,6 +126,7 @@
                 class="px-2 text-blue-500 underline"
                 href={source.repoUrl}
                 target="_blank"
+                rel="noreferrer"
               >
                 {source.name}
               </a>

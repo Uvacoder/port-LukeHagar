@@ -19,7 +19,7 @@
   <title>{$title}</title>
 </svelte:head>
 
-<div class="grow">
+<div class="grow text-white">
   <div class="flex grow flex-col justify-center">
     <h1 class=" py-2 text-start">Posts:</h1>
     <Divider class="py-2" />
@@ -33,7 +33,7 @@
     <div class="flex flex-wrap justify-center gap-2">
       {#each tags.sort((a, b) => a.localeCompare(b)) as tag}
         <a
-          class="bg-surface-900 text-xl text-white underline"
+          class="rounded-3xl bg-surface-900 p-2 text-xl text-white underline"
           href={`/blog/tag/${tag.replaceAll(" ", "").toLowerCase()}`}
         >
           {tag}
@@ -45,7 +45,7 @@
     <div class="flex flex-wrap justify-center gap-2">
       {#each dates as dateEntry}
         <a
-          class="bg-surface-900 text-xl text-white underline"
+          class="rounded-3xl bg-surface-900 p-2 text-xl text-white underline"
           href={`/blog/date/${dateEntry}`}
         >
           {dateEntry}

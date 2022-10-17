@@ -5,7 +5,7 @@
   storeHighlightJs.set(hljs);
 
   // Components & Utilities
-  import { AppShell } from "@brainandbones/skeleton";
+  import { AppShell, Divider } from "@brainandbones/skeleton";
   import { Dialog } from "@brainandbones/skeleton";
   import { Toast } from "@brainandbones/skeleton";
   import {
@@ -181,7 +181,7 @@
 
 <!-- App Shell -->
 <AppShell
-  sidebarLeft="bg-white/20 dark:bg-black/5 lg:w-auto"
+  sidebarLeft="bg-white/20 dark:bg-black/5 lg:w-auto text-white"
   slotFooter="bg-black p-4"
 >
   <!-- Header -->
@@ -202,32 +202,24 @@
 
   <!-- Sidebar (Left) -->
   <svelte:fragment slot="sidebarLeft">
-    <div class="no-scrollbar overscroll-contain text-white">
-      <AccordionGroup selected={storeAccordion} single>
+    <div class="no-scrollbar w-48 overscroll-contain text-white">
+      <AccordionGroup>
         {#each navigation as { title, list }, i}
-          <div
-            on:mouseenter={() => {
-              storeAccordion.set([i]);
-            }}
-            on:mouseleave={() => {
-              storeAccordion.set([]);
-            }}
-          >
-            <AccordionItem value={i}>
-              <svelte:fragment slot="summary">
-                <p class="text-white">{title}</p>
-              </svelte:fragment>
-              <svelte:fragment slot="content">
-                {#each list as { href, label }}
-                  <div class="flex-col">
-                    <a {href}>
-                      {label}
-                    </a>
-                  </div>
-                {/each}
-              </svelte:fragment>
-            </AccordionItem>
-          </div>
+          <AccordionItem>
+            <svelte:fragment slot="summary">
+              <p class="text-white">{title}</p>
+              <Divider />
+            </svelte:fragment>
+            <svelte:fragment slot="content">
+              {#each list as { href, label }}
+                <div class="flex-col">
+                  <a {href}>
+                    {label}
+                  </a>
+                </div>
+              {/each}
+            </svelte:fragment>
+          </AccordionItem>
         {/each}
       </AccordionGroup>
     </div>

@@ -3,7 +3,7 @@
 </script>
 
 <a
-  class="bg-surface-900 flex grow text-white shadow-2xl xl:grow-0"
+  class="flex grow rounded-3xl bg-surface-900 p-2 text-white shadow-2xl xl:grow-0"
   href={post.path}
 >
   <div class="flex grow flex-wrap gap-4 rounded-xl py-2 xl:flex-col">

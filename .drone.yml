@@ -2,10 +2,10 @@ kind: pipeline
 name: default
 
 steps:
-- name: test
-  image: node
-  commands:
-  - npm install
-  - npx playwright install
-  - npx playwright install-deps  
-  - npm test
+  - name: test
+    image: node
+    commands:
+      - yarn install
+      - npx playwright install
+      - npx playwright install-deps
+      - yarn test
