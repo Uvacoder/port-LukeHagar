@@ -6,4 +6,5 @@ steps:
   image: node
   commands:
   - npm install
+  - npx playwright install
   - npm test
