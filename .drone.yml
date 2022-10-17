@@ -7,4 +7,5 @@ steps:
   commands:
   - npm install
   - npx playwright install
+  - npx playwright install-deps  
   - npm test
