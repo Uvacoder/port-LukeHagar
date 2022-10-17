@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import { Card, Divider } from "@brainandbones/skeleton";
+  import { Divider } from "@brainandbones/skeleton";
 
   import sailpoint from "./sailpoint.svg";
 
@@ -57,11 +57,7 @@
   <Divider class="mb-2" />
   <div class=" flex flex-wrap gap-4">
     {#each experiences as experience}
-      <Card
-        background="bg-surface-900"
-        color="text-white"
-        class="flex grow flex-col gap-2 shadow-2xl"
-      >
+      <div class="card card-body flex grow flex-col gap-2 shadow-2xl">
         <div class=" flex flex-row justify-between">
           <div>
             <p class="text-xl ">{experience.title}</p>
@@ -95,7 +91,7 @@
             <p>{skill}</p>
           {/each}
         </div>
-      </Card>
+      </div>
     {/each}
   </div>
 </div>

@@ -1,5 +1,4 @@
 <script>
-  import { Button, Card } from "@brainandbones/skeleton";
   import currentPage from "../../stores/title";
   export let data;
   export let title;
@@ -15,10 +14,8 @@
 
 <div class="flex grow flex-col   text-white">
   <div class="flex flex-row gap-2">
-    <Button background="bg-surface-900" color="text-white" href="/blog/posts"
-      >Back</Button
-    >
-    <Card background="bg-surface-900" class="flex grow flex-wrap">
+    <button class="bg-surface-900 text-white" href="/blog/posts">Back</button>
+    <div class="bg-surface-900 flex grow flex-wrap">
       <div class="flex grow flex-wrap">
         <div class="flex flex-col justify-start gap-1 px-2">
           <p class="text-xl">{title}</p>
@@ -46,13 +43,13 @@
           {/if}
         </div>
       </div>
-    </Card>
+    </div>
   </div>
-  <Card background="bg-surface-900" color="text-white" class="mt-2 ">
+  <div class="bg-surface-900 mt-2 text-white ">
     <div
-      class="prose flex max-w-none flex-col justify-center text-white prose-headings:underline prose-img:rounded-xl"
+      class="prose prose-headings:underline prose-img:rounded-xl flex max-w-none flex-col justify-center text-white"
     >
       <slot />
     </div>
-  </Card>
+  </div>
 </div>

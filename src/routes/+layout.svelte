@@ -1,9 +1,16 @@
-<script>
+<script lang="ts">
+  import hljs from "highlight.js";
+  import "highlight.js/styles/github-dark.css";
+  import { storeHighlightJs } from "@brainandbones/skeleton/utilities/CodeBlock/stores";
+  storeHighlightJs.set(hljs);
+
+  // Components & Utilities
+  import { AppShell } from "@brainandbones/skeleton";
+  import { Dialog } from "@brainandbones/skeleton";
+  import { Toast } from "@brainandbones/skeleton";
   import {
     AccordionGroup,
     AccordionItem,
-    Button,
-    Dialog,
     Drawer,
     GradientHeading,
   } from "@brainandbones/skeleton";
@@ -12,7 +19,7 @@
   import "../app.css";
   import "../theme.css";
 
-  import { browser } from "$app/env";
+  import { browser } from "$app/environment";
   import { assets } from "$app/paths";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
@@ -62,9 +69,8 @@
 
     let x, y;
 
-    const loader = new THREE.CubeTextureLoader();
-
     console.log(assets);
+    const loader = new THREE.CubeTextureLoader();
     const texture = loader.load([
       "/Threejs Assets/blue/bkg1_right.png",
       "/Threejs Assets/blue/bkg1_left.png",
@@ -168,95 +174,79 @@
   ];
 
   const drawer = writable(false);
+  // Disable left sidebar on homepage
 </script>
-
-<Dialog
-  backdrop="bg-primary-500/50"
-  blur="backdrop-blur-lg"
-  card="bg-primary-500"
-  duration={250}
-/>
 
 <canvas id="background" />
 
-<div class="relative z-50 flex flex-row text-white">
-  <Drawer
-    visible={drawer}
-    fixed="left"
-    background="bg-surface-900/50 lg:bg-transparent"
-    border="border-0"
-    class=" p-4"
-  >
-    <svelte:fragment slot="header">
-      <div class="flex items-center justify-center  p-4">
-        <a href="/" class="text-xl font-bold">
-          <GradientHeading
-            tag="h1"
-            class="text-3xl"
-            direction="bg-gradient-to-r"
-            from="from-primary-500"
-            to="to-accent-500"
-            >Luke Hagar
-          </GradientHeading>
-        </a>
-      </div>
-    </svelte:fragment>
-    <svelte:fragment slot="main">
-      <div class="no-scrollbar overscroll-contain">
-        <AccordionGroup selected={storeAccordion} single>
-          {#each navigation as { title, list }, i}
-            <div
-              on:mouseenter={() => {
-                storeAccordion.set([i]);
-              }}
-              on:mouseleave={() => {
-                storeAccordion.set([]);
-              }}
-            >
-              <AccordionItem value={i}>
-                <svelte:fragment slot="title">
-                  <p class="text-white">{title}</p>
-                </svelte:fragment>
-                <svelte:fragment slot="description">
-                  {#each list as { href, label }}
-                    <div class="flex-col">
-                      <Button
-                        size="base"
-                        color="text-white"
-                        background="bg-transparent"
-                        width="w-auto"
-                        {href}
-                        disabled={false}
-                      >
-                        {label}
-                      </Button>
-                    </div>
-                  {/each}
-                </svelte:fragment>
-              </AccordionItem>
-            </div>
-          {/each}
-        </AccordionGroup>
-      </div>
-    </svelte:fragment>
-  </Drawer>
+<!-- App Shell -->
+<AppShell
+  sidebarLeft="bg-white/20 dark:bg-black/5 lg:w-auto"
+  slotFooter="bg-black p-4"
+>
+  <!-- Header -->
+  <svelte:fragment slot="header">
+    <div class="flex items-center justify-center  p-4">
+      <a href="/" class="text-xl font-bold">
+        <GradientHeading
+          tag="h1"
+          class="text-3xl"
+          direction="bg-gradient-to-r"
+          from="from-primary-500"
+          to="to-accent-500"
+          >Luke Hagar
+        </GradientHeading>
+      </a>
+    </div>
+  </svelte:fragment>
 
+  <!-- Sidebar (Left) -->
+  <svelte:fragment slot="sidebarLeft">
+    <div class="no-scrollbar overscroll-contain text-white">
+      <AccordionGroup selected={storeAccordion} single>
+        {#each navigation as { title, list }, i}
+          <div
+            on:mouseenter={() => {
+              storeAccordion.set([i]);
+            }}
+            on:mouseleave={() => {
+              storeAccordion.set([]);
+            }}
+          >
+            <AccordionItem value={i}>
+              <svelte:fragment slot="summary">
+                <p class="text-white">{title}</p>
+              </svelte:fragment>
+              <svelte:fragment slot="content">
+                {#each list as { href, label }}
+                  <div class="flex-col">
+                    <a {href}>
+                      {label}
+                    </a>
+                  </div>
+                {/each}
+              </svelte:fragment>
+            </AccordionItem>
+          </div>
+        {/each}
+      </AccordionGroup>
+    </div>
+  </svelte:fragment>
+
+  <!-- Page Content -->
   <div class="flex grow flex-col justify-center overflow-hidden p-4">
     <header class="flex justify-center pb-8 lg:hidden">
-      <Button
-        size="lg"
-        color="text-white"
-        background="bg-surface-900"
-        on:click={drawerOpen}
-      >
+      <button class="text-white" on:click={drawerOpen}>
         <span class="font-bold">Menu</span>
-      </Button>
+      </button>
     </header>
     <div class="grow xl:flex">
       <slot />
     </div>
   </div>
-</div>
+
+  <!-- Page Footer -->
+</AppShell>
 
 <style>
   canvas {

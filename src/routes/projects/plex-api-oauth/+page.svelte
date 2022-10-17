@@ -2,7 +2,6 @@
   import {
     AccordionGroup,
     AccordionItem,
-    Button,
     CodeBlock,
     Divider,
     Tab,
@@ -37,7 +36,7 @@
 </svelte:head>
 
 <div
-  class="no-scrollbar flex grow flex-col overflow-hidden overflow-y-scroll rounded-xl bg-surface-900 p-6"
+  class="no-scrollbar bg-surface-900 flex grow flex-col overflow-hidden overflow-y-scroll rounded-xl p-6"
 >
   <div class="flex flex-col">
     <div class=" py-10 text-center">
@@ -98,14 +97,7 @@
       <p class="text-center">Client & Auth Information</p>
       <Divider />
       <div class="flex flex-col gap-2 pt-2 xl:grid xl:grid-cols-2">
-        <Button
-          size="xl:xl sm"
-          background="bg-black"
-          color="text-white"
-          ring="ring-transparent"
-          weight="ring-none"
-          rounded="rounded-full"
-          disabled={false}
+        <button
           class="col-span-2"
           on:click={() => {
             let input = { product: "LukeHagar.com" };
@@ -114,7 +106,7 @@
           }}
         >
           CreatePlexClientInformation()
-        </Button>
+        </button>
         <div class="flex justify-center">
           <div class="flex flex-col justify-center overflow-hidden">
             <p class="text-center">Command:</p>
@@ -136,14 +128,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
         </div>
       </div>
       <div class="flex flex-col gap-2 xl:grid xl:grid-cols-2">
-        <Button
-          size="xl:xl sm"
-          background="bg-black"
-          color="text-white"
-          ring="ring-transparent"
-          weight="ring-none"
-          rounded="rounded-full"
-          disabled={false}
+        <button
           class="col-span-2"
           on:click={async () => {
             plexLoginInformation = await PlexLogin(plexClientInformation);
@@ -151,7 +136,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
           }}
         >
           PlexLogin()
-        </Button>
+        </button>
         <div class="flex justify-center">
           <div class="flex flex-col justify-center overflow-hidden">
             <p class="text-center">Command:</p>
@@ -192,13 +177,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
                   class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
                 >
                   <div class="flex flex-col justify-center">
-                    <Button
-                      size="xl"
-                      background="bg-black"
-                      color="text-white"
-                      ring="ring-transparent"
-                      weight="ring-none"
-                      rounded="rounded-full"
+                    <button
                       disabled={plexClientInformation === null}
                       on:click={async () => {
                         commandOutPut = await GetPlexServers(
@@ -210,7 +189,7 @@ plexClientInformation = CreatePlexClientInformation(input);`}
                       }}
                     >
                       Get Plex Servers
-                    </Button>
+                    </button>
                   </div>
                   <div class="flex flex-col justify-center overflow-hidden">
                     <p class="text-center">Command</p>
@@ -228,13 +207,7 @@ plexLoginInformation
                   class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
                 >
                   <div class="flex flex-col justify-center">
-                    <Button
-                      size="xl"
-                      background="bg-black"
-                      color="text-white"
-                      ring="ring-transparent"
-                      weight="ring-none"
-                      rounded="rounded-full"
+                    <button
                       disabled={plexLoginInformation === null}
                       on:click={async () => {
                         commandOutPut = await GetPlexDevices(
@@ -245,7 +218,7 @@ plexLoginInformation
                       }}
                     >
                       Get Plex Devices
-                    </Button>
+                    </button>
                   </div>
 
                   <div class="flex flex-col justify-center overflow-hidden">
@@ -268,13 +241,7 @@ plexLoginInformation
                   class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
                 >
                   <div class="flex flex-col justify-center">
-                    <Button
-                      size="xl"
-                      background="bg-black"
-                      color="text-white"
-                      ring="ring-transparent"
-                      weight="ring-none"
-                      rounded="rounded-full"
+                    <button
                       disabled={plexLoginInformation === null}
                       on:click={async () => {
                         commandOutPut = await GetPlexUserData(
@@ -285,7 +252,7 @@ plexLoginInformation
                       }}
                     >
                       GetPlexUserData()
-                    </Button>
+                    </button>
                   </div>
                   <div class="flex flex-col justify-center overflow-hidden">
                     <p class="text-center">Command</p>
@@ -304,13 +271,7 @@ plexLoginInformation
                   class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
                 >
                   <div class="flex flex-col justify-center">
-                    <Button
-                      size="xl"
-                      background="bg-black"
-                      color="text-white"
-                      ring="ring-transparent"
-                      weight="ring-none"
-                      rounded="rounded-full"
+                    <button
                       disabled={plexServers === null}
                       on:click={async () => {
                         commandOutPut = await GetPlexLibraries(plexServers);
@@ -318,7 +279,7 @@ plexLoginInformation
                       }}
                     >
                       GetPlexLibraries()
-                    </Button>
+                    </button>
                   </div>
                   <div class="flex flex-col justify-center overflow-hidden">
                     <p class="text-center">Command</p>
@@ -333,13 +294,7 @@ plexLoginInformation
                   class="flex grow flex-wrap justify-center gap-1 overflow-hidden"
                 >
                   <div class="flex flex-col justify-center">
-                    <Button
-                      size="xl"
-                      background="bg-black"
-                      color="text-white"
-                      ring="ring-transparent"
-                      weight="ring-none"
-                      rounded="rounded-full"
+                    <button
                       disabled={plexServers === null}
                       on:click={async () => {
                         commandOutPut = await GetPlexMovieLibraries(
@@ -349,7 +304,7 @@ plexLoginInformation
                       }}
                     >
                       GetPlexMovieLibraries()
-                    </Button>
+                    </button>
                   </div>
 
                   <div class="flex flex-col justify-center overflow-hidden">

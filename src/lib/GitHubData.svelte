@@ -1,6 +1,4 @@
 <script>
-  import { Button, Card } from "@brainandbones/skeleton";
-
   let githubRepos = [
     {
       name: "Warden",
@@ -95,10 +93,8 @@
 <div class="flex grow">
   <div class="flex grow flex-wrap justify-center gap-4 xl:grid xl:grid-cols-3 ">
     {#each githubRepos.sort((a, b) => a.name.localeCompare(b.name)) as repo}
-      <Button
-        background="bg-surface-900"
-        color="text-white"
-        class="my-1 grow shadow-2xl xl:grow-0"
+      <a
+        class="bg-surface-900 my-1 grow text-white shadow-2xl xl:grow-0"
         href={repo.localPath}
         target="_blank"
       >
@@ -147,7 +143,7 @@
             </div>
           {/each}
         </div>
-      </Button>
+      </a>
     {/each}
   </div>
 </div>

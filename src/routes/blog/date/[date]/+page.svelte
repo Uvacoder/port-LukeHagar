@@ -2,7 +2,7 @@
   export let data;
   $: ({ tags, tag, posts, dates, date } = data);
   import Post from "$lib/Post.svelte";
-  import { Button, Divider, filter } from "@brainandbones/skeleton";
+  import { Divider, filter } from "@brainandbones/skeleton";
 </script>
 
 <svelte:head>
@@ -25,28 +25,24 @@
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-2">
       {#each tags.sort( (a, b) => a.displayName.localeCompare(b.displayName) ) as postTag}
-        <Button
-          class="text-xl underline"
-          background="bg-surface-900"
-          color="text-white"
+        <a
+          class="bg-surface-900 text-xl text-white underline"
           href={`/blog/tag/${postTag.tag}`}
         >
           {postTag.displayName}
-        </Button>
+        </a>
       {/each}
     </div>
     <h1 class=" pt-8 pb-2 text-start">Dates:</h1>
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-2">
       {#each dates as dateEntry}
-        <Button
-          class="text-xl underline"
-          background="bg-surface-900"
-          color="text-white"
+        <a
+          class="bg-surface-900 text-xl text-white underline"
           href={`/blog/date/${dateEntry}`}
         >
           {dateEntry}
-        </Button>
+        </a>
       {/each}
     </div>
   </div>

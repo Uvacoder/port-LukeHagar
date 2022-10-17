@@ -6,7 +6,7 @@ module.exports = {
   ],
   theme: {},
   plugins: [
-    require("@brainandbones/skeleton/tailwind.cjs"),
+    require("@brainandbones/skeleton/tailwind/theme.cjs"),
     require("@tailwindcss/typography"),
   ],
 };

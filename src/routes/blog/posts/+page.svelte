@@ -1,6 +1,6 @@
 <script>
   export let data;
-  import { Button, Divider } from "@brainandbones/skeleton";
+  import { Divider } from "@brainandbones/skeleton";
   import Post from "$lib/Post.svelte";
   import title from "../../../stores/title";
   title.set("Blog");
@@ -32,28 +32,24 @@
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-2">
       {#each tags.sort((a, b) => a.localeCompare(b)) as tag}
-        <Button
-          background="bg-surface-900"
-          color="text-white"
-          class="text-xl underline"
+        <a
+          class="bg-surface-900 text-xl text-white underline"
           href={`/blog/tag/${tag.replaceAll(" ", "").toLowerCase()}`}
         >
           {tag}
-        </Button>
+        </a>
       {/each}
     </div>
     <h1 class=" pt-8 pb-2 text-start">Dates:</h1>
     <Divider class="py-2" />
     <div class="flex flex-wrap justify-center gap-2">
       {#each dates as dateEntry}
-        <Button
-          background="bg-surface-900"
-          color="text-white"
-          class="text-xl underline"
+        <a
+          class="bg-surface-900 text-xl text-white underline"
           href={`/blog/date/${dateEntry}`}
         >
           {dateEntry}
-        </Button>
+        </a>
       {/each}
     </div>
   </div>

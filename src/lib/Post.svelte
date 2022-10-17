@@ -1,12 +1,9 @@
 <script>
-  import { Button } from "@brainandbones/skeleton";
   export let post;
 </script>
 
-<Button
-  background="bg-surface-900"
-  color="text-white"
-  class="flex grow shadow-2xl xl:grow-0"
+<a
+  class="bg-surface-900 flex grow text-white shadow-2xl xl:grow-0"
   href={post.path}
 >
   <div class="flex grow flex-wrap gap-4 rounded-xl py-2 xl:flex-col">
@@ -22,4 +19,4 @@
       {/if}
     </div>
   </div>
-</Button>
+</a>
